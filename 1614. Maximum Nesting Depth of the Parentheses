@@ -1,0 +1,13 @@
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        depth = 0
+        pren = 0
+        for i in s:
+            if i=="(":
+                pren += 1
+            elif i ==")":
+                pren -=1
+            if depth < pren:
+                depth = pren
+        return depth
+        
