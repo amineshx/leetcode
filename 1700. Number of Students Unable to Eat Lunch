@@ -1,0 +1,15 @@
+int countStudents(int* students, int studentsSize, int* sandwiches, int sandwichesSize) {
+   int arr[2] = {0}; // to count  the number of students want each type of sandwich
+    
+    // Count the number of students preferring each type of sandwich
+    for (int i = 0; i < studentsSize; ++i)
+        arr[students[i]]++;
+    
+    for (int i = 0; i < sandwichesSize; ++i) {
+        if (arr[sandwiches[i]] > 0)
+            arr[sandwiches[i]]--;
+        else
+            break;
+    }
+    return arr[0] + arr[1];
+}
