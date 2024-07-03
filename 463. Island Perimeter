@@ -1,0 +1,31 @@
+/**
+ * @param {number[][]} grid
+ * @return {number}
+ */
+var islandPerimeter = function(grid) {
+    n=grid.length
+    m=grid[0].length
+    visited = new Set()
+    const dfs=(i,j)=>{
+        if(i>=n||j>=m||i<0||j<0||grid[i][j]===0){
+            return 1
+        }
+        const target = JSON.stringify([i, j]);
+        if (visited.has(target)) {
+            return 0;
+        }
+        visited.add(target);
+        perim = dfs(i, j+1)
+        perim +=dfs(i+1, j)
+        perim +=dfs(i, j-1)
+        perim +=dfs(i-1, j)
+        return perim
+    }
+    for (i=0;i<n;i++){
+        for (j=0;j<m;j++){
+            if(grid[i][j]===1){
+                return dfs(i,j)
+            }
+        }
+    }
+};
