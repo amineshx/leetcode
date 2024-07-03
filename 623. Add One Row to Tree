@@ -1,0 +1,51 @@
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     public $val = null;
+ *     public $left = null;
+ *     public $right = null;
+ *     function __construct($val = 0, $left = null, $right = null) {
+ *         $this->val = $val;
+ *         $this->left = $left;
+ *         $this->right = $right;
+ *     }
+ * }
+ */
+class Solution {
+
+    /**
+     * @param TreeNode $root
+     * @param Integer $val
+     * @param Integer $depth
+     * @return TreeNode
+     */
+    function addOneRow($root, $val, $depth) {
+        if ($depth == 1) {
+            $newRoot = new TreeNode($val);
+            $newRoot->left = $root;
+            return $newRoot;
+        }
+        $this->helper($root, $val, $depth);
+        return $root;
+    }
+    
+    function helper(&$node, $val, $depth) {
+        if ($node === null) return;
+        
+        if ($depth == 2) {
+            $tempLeft = $node->left;
+            $tempRight = $node->right;
+            
+            $node->left = new TreeNode($val);
+            $node->left->left = $tempLeft;
+            
+            $node->right = new TreeNode($val);
+            $node->right->right = $tempRight;
+            
+            return;
+        }
+        
+        $this->helper($node->left, $val, $depth - 1);
+        $this->helper($node->right, $val, $depth - 1);
+    }
+}
