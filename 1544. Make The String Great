@@ -1,0 +1,34 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var makeGood = function(s) {
+    function removeCharacter(position,s){
+        string = s
+        newString = string.substr(0,position-1)+string.substr(position+1 ,string.length)
+        return newString
+    }
+    let res = s
+    let i=0
+    while(i<res.length-1){
+        char = res[i]
+        charUpper=char.toUpperCase()
+        charLowwer=char.toLowerCase()
+        if (charUpper===char){
+            if (charLowwer===res[i+1]){
+                res=removeCharacter(i+1,res)
+                i=0
+            }else{
+                i++
+            }
+        }else if(charLowwer===char){
+            if(charUpper===res[i+1]){
+                res=removeCharacter(i+1,res)
+                i=0
+            }else{
+                i++
+            }
+        }
+    }
+    return res
+};
