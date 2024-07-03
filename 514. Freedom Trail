@@ -1,0 +1,23 @@
+class Solution:
+    def findRotateSteps(self, ring: str, key: str) -> int:
+        memo = {} 
+        
+        def dp(i: int, j: int) -> int:
+            if i == len(key):
+                return 0
+            if (i, j) in memo:
+                return memo[(i, j)]
+            
+            positions = [pos for pos, char in enumerate(ring) if char == key[i]]
+            min_steps = float('inf')  
+            
+            for pos in positions:
+                steps_to_pos = min(abs(pos - j), len(ring) - abs(pos - j))  # Considering circular movement
+                steps_to_complete = 1 + steps_to_pos 
+                remaining_steps = dp(i + 1, pos)
+                min_steps = min(min_steps, steps_to_complete + remaining_steps)
+            
+            memo[(i, j)] = min_steps 
+            return min_steps
+        
+        return dp(0, 0)
