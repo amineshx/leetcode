@@ -1,0 +1,26 @@
+class Solution:
+    def findFarmland(self, land: List[List[int]]) -> List[List[int]]:
+        n=len(land)
+        m=len(land[0])
+        visited = [[False]*m for _ in range(n)]
+        ans=[]
+
+        for x in range(n):
+            for y in range(m):
+                if land[x][y]==1 and not visited[x][y]:
+                    sx,sy=x,y
+                    ex,ey=sx,sy
+
+                    while ey+1 <m and land[ex][ey+1]==1:
+                        ey+=1
+                    while ex+1<n and land[ex+1][ey]==1:
+                        ex+=1
+                    
+                    ans.append((sx,sy,ex,ey))
+
+                    for i in range(sx,ex+1):
+                        for j in range(sy,ey+1):
+                            visited[i][j] = True
+        
+        return ans
+        
