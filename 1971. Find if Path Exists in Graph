@@ -1,0 +1,54 @@
+#solution1
+
+from collections import defaultdict
+
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        # Construct the graph
+        graph = defaultdict(list)
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+
+        visited = set()
+
+        # DFS function
+        def dfs(node):
+            if node == destination:
+                return True
+            visited.add(node)
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    if dfs(neighbor):
+                        return True
+            return False
+
+        # Call DFS from the source vertex
+        return dfs(source)
+
+#solution2
+from collections import deque
+
+class Solution:
+    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        graph = defaultdict(list)
+
+        # Create adjacency list
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+
+        visited = set()
+        queue = deque([source])
+        visited.add(source)
+
+        while queue:
+            node = queue.popleft()
+            if node == destination:
+                return True
+            for neighbor in graph[node]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
+                    visited.add(neighbor)
+
+        return False
