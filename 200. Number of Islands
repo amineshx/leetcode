@@ -1,0 +1,43 @@
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+var numIslands = function(grid) {
+    const n = grid.length
+    const m = grid[0].length
+    const visited = new Set()
+    result = 0
+    const bfs=(r,c)=>{
+        let q = []
+        const target = JSON.stringify([r, c]);
+        visited.add(target)
+        q.push([r,c])
+        while(q!=""){
+            row=q[0][0]
+            col=q[0][1]
+            q.shift()
+            directions=[[1,0],[-1,0],[0,1],[0,-1]]
+            directions.forEach(([dr,dc]) => {
+                r=row+dr
+                c=col+dc
+                const target = JSON.stringify([r, c]);
+                if(r<n && r>=0 && c<m && c>=0 && grid[r][c]==="1" && !(visited.has(target))) {
+                    visited.add(target)
+                    q.push([r,c])
+                } 
+            });
+            
+        }
+    }
+    for(r=0;r<n;r++){
+        for(c=0;c<m;c++){
+            const target = JSON.stringify([r, c]);
+            if(grid[r][c]==="1" && !(visited.has(target))){
+                bfs(r,c)
+                result++
+            }
+        }
+    }
+    return result
+};
+
