@@ -1,3 +1,4 @@
+#python
 class Solution:
     def deckRevealedIncreasing(self, deck: List[int]) -> List[int]:
         deck.sort()
@@ -9,3 +10,29 @@ class Solution:
             if q:
                 q.append(q.popleft())
         return res 
+
+
+#js
+'''
+/**
+ * @param {number[]} deck
+ * @return {number[]}
+ */
+var deckRevealedIncreasing = function(deck) {
+    const tempDeck = deck.sort((a,b)=>(a-b))
+    let res = new Array(tempDeck.length).fill(0);
+    let q = [];
+    for (let i = 0; i < tempDeck.length; i++) {
+        q.push(i);
+    }
+    tempDeck.forEach((card,i)=>{
+        const j = q.shift()
+        res[j]=card
+        if (q.length!=0){
+            q.push(q.shift())
+        }
+    })
+    return res
+
+};
+'''
