@@ -1,0 +1,60 @@
+// O(n)
+//js
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var mergeNodes = function(head) {
+    cur = head
+    dummy= new ListNode()
+    tail = dummy
+    while(cur.next){
+        node = new ListNode(0)
+        while(cur.next.val !=0 ){
+            node.val=node.val+cur.next.val
+            cur=cur.next
+        }
+        tail.next=node
+        tail=node
+        cur=cur.next
+    }
+    return dummy.next
+
+
+};
+
+// O(1)
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var mergeNodes = function(head) {
+    cur = head
+    while(cur.next){
+        node=cur.next
+        cur=cur.next
+        while(cur.next.val !=0 ){
+            node.val=node.val+cur.next.val
+            cur=cur.next
+        }
+        cur=cur.next
+        node.next=cur.next
+    }
+    return head.next
+
+
+};
