@@ -1,0 +1,11 @@
+class Solution:
+    def scoreOfString(self, s: str) -> int:
+        n=len(s)
+        pointer=0
+        sum=0
+        while pointer<n-1:
+            sum+=abs(ord(s[pointer])-ord(s[pointer+1]))
+            pointer+=1
+        return sum
+
+        
