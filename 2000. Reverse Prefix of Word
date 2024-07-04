@@ -1,0 +1,25 @@
+#using enumerate for loop
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        res=""
+        for i,char in enumerate(word):
+            res=res+char
+            if char==ch:
+                return res[::-1]+word[i+1:]
+            
+        return word
+
+
+#using in range for loop 
+class Solution:
+    def reversePrefix(self, word: str, ch: str) -> str:
+        n=len(word)
+        res=""
+        for i in range(n):
+            res=res+word[i]
+            if word[i]==ch:
+                return res[::-1]+word[i+1:]
+            
+        return word
+                
+        
