@@ -1,0 +1,24 @@
+class Solution:
+    def compareVersion(self, version1: str, version2: str) -> int:
+        version1=version1.split(".")
+        version2=version2.split(".")
+        res=0
+        while (True):
+            if len(version1)>len(version2):
+                version2.append(0)
+            elif len(version1)<len(version2):
+                version1.append(0)
+            else :
+                break
+        for i in range(len(version1)):
+            v1=int(version1[i])
+            v2=int(version2[i])
+            if v1>v2:
+                res=1
+            elif v1<v2:
+                if res!=1:
+                    return -1
+            else :
+                res+=0
+        return res
+        
