@@ -1,0 +1,12 @@
+class Solution:
+    def singleNumber(self, nums: List[int]) -> List[int]:
+        xor,a,b = 0,0,0
+        for i in nums:
+            xor^=i
+        diff = xor & -xor
+        for i in nums:
+            if diff & i:
+                a^=i
+                continue
+            b^=i
+        return [a,b]
