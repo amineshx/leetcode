@@ -1,0 +1,41 @@
+class Solution:
+    def matrixScore(self, grid: List[List[int]]) -> int:
+        n,m=len(grid), len(grid[0])
+        res = n*2**(m-1)
+        for c in range(1,m):
+            cnt=0
+            for r in range(n):
+                if grid[r][c]!=grid[r][0]:
+                    cnt+=1
+            cnt = max(cnt,n-cnt)
+            res+= cnt*(2**(m-c-1))
+
+        return res
+
+
+# optimiezed one 
+class Solution:
+    def matrixScore(self, grid: List[List[int]]) -> int:
+        n,m=len(grid),len(grid[0])
+
+        #flip rows
+        for r in range(n):
+            if grid[r][0] ==0:
+                for c in range(m):
+                    grid[r][c]=0 if grid[r][c] else 1
+        
+        #flip columns
+        for c in range(m):
+            one_cnt=0 
+            for r in range(n):
+                one_cnt+=grid[r][c]
+            if one_cnt < n-one_cnt:
+                for r in range(n):
+                    grid[r][c]=0 if grid[r][c] else 1
+        
+        res=0
+        for r in range(n):
+            for c in range(m):
+                res+= grid[r][c] << (m-c-1)
+                
+        return res
