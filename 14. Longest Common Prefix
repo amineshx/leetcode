@@ -1,0 +1,14 @@
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        if not strs:
+            return ""
+        output = ""
+        smallest_word = min(strs)
+        
+        for i, char in enumerate(smallest_word):
+            for other_word in strs:
+                if other_word[i] != char:
+                    return output
+            output += char
+        
+        return output
