@@ -1,0 +1,114 @@
+
+
+function ListNode(val, next) {
+      this.val = (val===undefined ? 0 : val)
+      this.next = (next===undefined ? null : next)
+}
+ 
+/**
+ * @param {ListNode} head
+ * @return {number[]}
+ */
+var nodesBetweenCriticalPoints = function(head) {
+    const critical=(prev,cur,nxt)=>{
+        if((prev.val>cur.val && nxt.val>cur.val)||(prev.val<cur.val && nxt.val<cur.val)){
+            return true 
+        }
+        return false
+    }
+    let prev=head
+    let cur=head.next
+    let nxt=cur.next
+    min_dist=Infinity
+    max_dist=-1
+    prev_critical_index=0
+    first_critical_index=0
+    i=1
+    while(nxt){
+        if(critical(prev,cur,nxt)){
+            if(first_critical_index){
+                max_dist=i-first_critical_index
+                min_dist=Math.min(min_dist,i-prev_critical_index)
+            }else{
+                first_critical_index=i
+            }
+            prev_critical_index=i
+        }
+        prev=cur
+        cur=nxt
+        nxt=nxt.next
+        i++
+    }
+    if(min_dist==Infinity){
+        min_dist=-1
+    }
+    return [min_dist,max_dist]
+};
+
+console.log(nodesBetweenCriticalPoints([5,3,1,2,5,1,2]))
+
+
+
+
+// chatgpt
+/*
+var nodesBetweenCriticalPoints = function(head) {
+    const critical = (prev, cur, nxt) => {
+        return (prev.val > cur.val && nxt.val > cur.val) || (prev.val < cur.val && nxt.val < cur.val);
+    };
+
+    if (!head || !head.next || !head.next.next) return [-1, -1];
+
+    let prev = head;
+    let cur = head.next;
+    let nxt = cur.next;
+    let min_dist = Infinity;
+    let max_dist = -1;
+    let prev_critical_index = -1;
+    let first_critical_index = -1;
+    let i = 1;
+
+    while (nxt) {
+        if (critical(prev, cur, nxt)) {
+            if (first_critical_index !== -1) {
+                max_dist = i - first_critical_index;
+                min_dist = Math.min(min_dist, i - prev_critical_index);
+            } else {
+                first_critical_index = i;
+            }
+            prev_critical_index = i;
+        }
+        prev = cur;
+        cur = nxt;
+        nxt = nxt.next;
+        i++;
+    }
+
+    if (min_dist == Infinity) {
+        min_dist = -1;
+    }
+
+    return [min_dist, max_dist];
+};
+
+// Test cases
+const createLinkedList = (arr) => {
+    let dummy = new ListNode();
+    let current = dummy;
+    for (let val of arr) {
+        current.next = new ListNode(val);
+        current = current.next;
+    }
+    return dummy.next;
+};
+
+let head1 = createLinkedList([3,1]);
+console.log(nodesBetweenCriticalPoints(head1)); // Expected: [-1, -1]
+
+let head2 = createLinkedList([5,3,1,2,5,1,2]);
+console.log(nodesBetweenCriticalPoints(head2)); // Expected: [1, 3]
+
+let head3 = createLinkedList([1,3,2,2,3,2,2,2,7]);
+console.log(nodesBetweenCriticalPoints(head3)); // Expected: [3, 3]
+
+*/
