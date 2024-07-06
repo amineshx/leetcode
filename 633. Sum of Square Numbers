@@ -1,0 +1,35 @@
+#my sol
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        sequers=[]
+        for i in range(int(sqrt(c))+1):
+            sequers.append(i*i)
+        
+        left,right=0,len(sequers)-1
+
+        while left<=right:
+            sum = sequers[left]+sequers[right]
+            if sum>c:
+                right-=1
+            elif sum<c:
+                left+=1
+            else :
+                return True
+        return False
+
+
+# another sol 
+class Solution:
+    def judgeSquareSum(self, c: int) -> bool:
+        left,right=0,int(sqrt(c))
+
+        while left<=right:
+            sum = left*left+right*right
+            if sum>c:
+                right-=1
+            elif sum<c:
+                left+=1
+            else :
+                return True
+        return False
+        
