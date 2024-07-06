@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} arr
+ * @return {boolean}
+ */
+var threeConsecutiveOdds = function(arr) {
+    const odd = (num)=>{
+        if(num===1){
+            return true
+        }
+        if (num%2===1){
+            return true
+        }else{
+            return false
+        }
+    }
+    for (let i=0;i<arr.length-2;i++){
+        if(odd(arr[i])&&odd(arr[i+1])&&odd(arr[i+2])){
+            return true
+        }
+    }
+    return false
+};
