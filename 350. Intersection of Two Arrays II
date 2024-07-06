@@ -1,0 +1,28 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var intersect = function(nums1, nums2) {
+    let map = {};
+    let res = [];
+
+    // Create a hashmap to count occurrences of each element in nums1
+    for (let num of nums1) {
+        if (map[num]) {
+            map[num]++;
+        } else {
+            map[num] = 1;
+        }
+    }
+
+    // Iterate over nums2 and find common elements
+    for (let num of nums2) {
+        if (map[num] && map[num] > 0) {
+            res.push(num);
+            map[num]--;
+        }
+    }
+
+    return res;
+};
