@@ -1,0 +1,15 @@
+class Solution:
+    def maximumImportance(self, n: int, roads: List[List[int]]) -> int:
+        edge_count=[0]*n
+
+        for a,b in roads:
+            edge_count[a]+=1
+            edge_count[b]+=1
+        
+        lable=1
+        res=0
+        for count in sorted(edge_count):
+            res+=lable*count
+            lable+=1
+        return res
+        
