@@ -1,0 +1,16 @@
+/**
+ * @param {number} numBottles
+ * @param {number} numExchange
+ * @return {number}
+ */
+var numWaterBottles = function(numBottles, numExchange) {
+    res =0
+    empty=0
+    while(numBottles>0){
+        res+=numBottles
+        empty+=numBottles
+        numBottles=Math.floor(empty/numExchange)
+        empty%=numExchange
+    }
+    return res
+};
