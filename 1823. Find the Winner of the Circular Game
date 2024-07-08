@@ -1,0 +1,43 @@
+/**
+ * @param {number} n
+ * @param {number} k
+ * @return {number}
+ */
+class Deque {
+  constructor() {
+    this.items = [];
+  }
+  // Add an element to the back
+  addBack(element) {
+    this.items.push(element);
+  }
+
+  // Remove an element from the front
+  removeFront() {
+    return this.items.shift();
+  }
+  // Get the size of the deque
+  size() {
+    return this.items.length;
+  }
+
+  // Peek the front element
+  peekFront() {
+    return this.items[0];
+  }
+
+}
+
+var findTheWinner = function(n, k) {
+    q= new Deque()
+    for(i=1;i<=n;i++){
+        q.addBack(i)
+    }
+    while(q.size()>1){
+        for(i=0;i<k-1;i++){
+            q.addBack(q.removeFront())
+        }
+        q.removeFront()
+    }
+    return q.peekFront()
+};
