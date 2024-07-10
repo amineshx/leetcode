@@ -1,0 +1,17 @@
+/**
+ * @param {string[]} logs
+ * @return {number}
+ */
+var minOperations = function(logs) {
+    res=0
+    for(log of logs){
+        if(log=='./'){
+            continue
+        }else if(log=='../'){
+            res = Math.max(0,res-1)
+        }else{
+            res++
+        }
+    }
+    return res
+};
