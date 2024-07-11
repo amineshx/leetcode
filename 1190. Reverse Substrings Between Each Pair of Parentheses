@@ -1,0 +1,20 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var reverseParentheses = function(s) {
+    stack=[]
+    for(c of s){
+        if(c===')'){
+            portion=[]
+            while(stack[stack.length-1]!='('){
+                portion.push(stack.pop())
+            }
+            stack.pop()
+            stack.push(...portion)
+        }else{
+            stack.push(c)
+        }
+    }
+    return stack.join('')
+};
