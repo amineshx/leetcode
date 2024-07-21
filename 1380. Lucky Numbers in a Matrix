@@ -1,0 +1,30 @@
+/**
+ * @param {number[][]} matrix
+ * @return {number[]}
+ */
+var luckyNumbers = function(matrix) {
+    let luckyNumbers = [];
+    let numRows = matrix.length;
+    let numCols = matrix[0].length;
+
+    // Find the minimum in each row
+    for (let i = 0; i < numRows; i++) {
+        let minInRow = Math.min(...matrix[i]);
+        let minColIndex = matrix[i].indexOf(minInRow);
+
+        // Check if this minimum value is the maximum in its column
+        let isLucky = true;
+        for (let j = 0; j < numRows; j++) {
+            if (matrix[j][minColIndex] > minInRow) {
+                isLucky = false;
+                break;
+            }
+        }
+
+        if (isLucky) {
+            luckyNumbers.push(minInRow);
+        }
+    }
+
+    return luckyNumbers;
+};
