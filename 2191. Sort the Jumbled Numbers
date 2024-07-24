@@ -1,0 +1,25 @@
+/**
+ * @param {number[]} mapping
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortJumbled = function(mapping, nums) {
+    const mapNumber = (number) => {
+        let strNum = number.toString();
+        let mappedStr = '';
+        for (let i = 0; i < strNum.length; i++) {
+            let index = parseInt(strNum[i]);
+            mappedStr += mapping[index];
+        }
+        return Number(mappedStr);
+    };
+
+    let mappedArray = nums.map(num => ({
+        original: num,
+        mapped: mapNumber(num)
+    }));
+
+    mappedArray.sort((a, b) => a.mapped - b.mapped);
+
+    return mappedArray.map(item => item.original);
+};
