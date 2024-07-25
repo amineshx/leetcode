@@ -1,0 +1,44 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArray = function(nums) {
+    const merge=((arr,L,mid,R)=>{
+        leftHalf = arr.slice(L, mid + 1)   
+        rightHalf = arr.slice(mid+1, R+1)
+        i=L
+        j=0
+        k=0
+        while(j<leftHalf.length && k<rightHalf.length){
+            if(leftHalf[j]<=rightHalf[k]){
+                arr[i]=leftHalf[j]
+                j++
+            }else{
+                arr[i]=rightHalf[k]
+                k++
+            }
+            i++
+        }
+        while(j<leftHalf.length){
+            nums[i]=leftHalf[j]
+            j++
+            i++
+        }
+        while(k<rightHalf.length){
+            nums[i]=rightHalf[k]
+            k++
+            i++
+        }
+    })
+    const mergeSort=((arr,left,right)=>{
+        if (left===right){
+            return arr
+        }
+        let mid=Math.floor((left+right)/2)
+        mergeSort(arr,left,mid)
+        mergeSort(arr,mid+1,right)
+        merge(arr,left,mid,right)
+        return arr
+    })
+    return mergeSort(nums,0,nums.length-1)
+};
