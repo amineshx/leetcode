@@ -1,0 +1,157 @@
+/*
+from collections import defaultdict
+from typing import List
+import heapq
+
+class Solution:
+    def findTheCity(self, n: int, edges: List[List[int]], distanceThreshold: int) -> int:
+        adj=defaultdict(list)
+        for v1,v2,dist in edges:
+            adj[v1].append((v2,dist))
+            adj[v2].append((v1,dist))
+        
+        def dijkstra(source):
+            heap=[(0,source)]
+            visit= set()
+            while heap:
+                dist,node=heapq.heappop(heap)
+                if node in visit:
+                    continue
+                visit.add(node)
+                for nei,dist2 in adj[node]:
+                    nei_dist = dist+dist2
+                    if nei_dist <= distanceThreshold:
+                        heapq.heappush(heap,(nei_dist, nei))
+            
+            return len(visit)-1
+
+        res, min_count = -1, n
+        for source in range(n):
+            count=dijkstra(source)
+            if count<=min_count:
+                res,min_count= source, count
+        return res
+*/
+
+/**
+ * @param {number} n
+ * @param {number[][]} edges
+ * @param {number} distanceThreshold
+ * @return {number}
+*/
+
+//const {MinHeap} = require('heap-js')
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    push(value) {
+        this.heap.push(value);
+        this._heapifyUp(this.heap.length - 1);
+    }
+
+    pop() {
+        if (this.heap.length === 0) return null;
+        const root = this.heap[0];
+        const end = this.heap.pop();
+        if (this.heap.length > 0) {
+            this.heap[0] = end;
+            this._heapifyDown(0);
+        }
+        return root;
+    }
+
+    _heapifyUp(index) {
+        const element = this.heap[index];
+        while (index > 0) {
+            const parentIndex = Math.floor((index - 1) / 2);
+            const parent = this.heap[parentIndex];
+            if (element[0] >= parent[0]) break;
+            this.heap[index] = parent;
+            index = parentIndex;
+        }
+        this.heap[index] = element;
+    }
+
+    _heapifyDown(index) {
+        const length = this.heap.length;
+        const element = this.heap[index];
+        while (true) {
+            const leftChildIndex = 2 * index + 1;
+            const rightChildIndex = 2 * index + 2;
+            let swap = null;
+            if (leftChildIndex < length) {
+                const leftChild = this.heap[leftChildIndex];
+                if (leftChild[0] < element[0]) swap = leftChildIndex;
+            }
+            if (rightChildIndex < length) {
+                const rightChild = this.heap[rightChildIndex];
+                if (
+                    (swap === null && rightChild[0] < element[0]) ||
+                    (swap !== null && rightChild[0] < this.heap[swap][0])
+                ) {
+                    swap = rightChildIndex;
+                }
+            }
+            if (swap === null) break;
+            this.heap[index] = this.heap[swap];
+            this.heap[swap] = element;
+            index = swap;
+        }
+    }
+}
+
+var findTheCity = function(n, edges, distanceThreshold) {
+    let adj = new Map();
+    for (const [v1, v2, dist] of edges) {
+        if (!adj.has(v1)) adj.set(v1, []);
+        if (!adj.has(v2)) adj.set(v2, []);
+        adj.get(v1).push([v2, dist]);
+        adj.get(v2).push([v1, dist]);
+    }
+
+    const dijkstra = (source) => {
+        const heap = new MinHeap();
+        heap.push([0, source]);
+        const distances = new Map();
+        distances.set(source, 0);
+        const visit = new Set();
+
+        while (heap.heap.length > 0) {
+            const [dist, node] = heap.pop();
+            if (visit.has(node)) continue;
+            visit.add(node);
+
+            const neighbors = adj.get(node) || [];
+            for (const [nei, dist2] of neighbors) {
+                const nei_dist = dist + dist2;
+                if (nei_dist <= distanceThreshold) {
+                    if (!distances.has(nei) || nei_dist < distances.get(nei)) {
+                        distances.set(nei, nei_dist);
+                        heap.push([nei_dist, nei]);
+                    }
+                }
+            }
+        }
+
+        // Count reachable cities within the distance threshold
+        let count = 0;
+        for (const [_, d] of distances) {
+            if (d <= distanceThreshold) count++;
+        }
+        return count - 1; // Exclude the source node
+    };
+
+    let res = -1;
+    let min_count = n;
+    for (let source = 0; source < n; source++) {
+        let count = dijkstra(source);
+        if (count <= min_count) {
+            res = source;
+            min_count = count;
+        }
+    }
+    return res;
+};
+
