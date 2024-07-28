@@ -1,3 +1,4 @@
+/*
 from typing import List
 from collections import defaultdict
 import heapq
@@ -28,15 +29,129 @@ class Solution:
                 return -1
             res+=min_cost_maps[src][dist]
         return res
+*/
+/**
+ * @param {string} source
+ * @param {string} target
+ * @param {character[]} original
+ * @param {character[]} changed
+ * @param {number[]} cost
+ * @return {number}
+ */
 
-# /**
-#  * @param {string} source
-#  * @param {string} target
-#  * @param {character[]} original
-#  * @param {character[]} changed
-#  * @param {number[]} cost
-#  * @return {number}
-#  */
-# var minimumCost = function(source, target, original, changed, cost) {
-    
-# };
+class MinHeap {
+    constructor() {
+        this.heap = [];
+    }
+
+    push(value) {
+        this.heap.push(value);
+        this._heapifyUp(this.heap.length - 1);
+    }
+
+    pop() {
+        if (this.heap.length === 0) return null;
+        const root = this.heap[0];
+        const end = this.heap.pop();
+        if (this.heap.length > 0) {
+            this.heap[0] = end;
+            this._heapifyDown(0);
+        }
+        return root;
+    }
+
+    _heapifyUp(index) {
+        const element = this.heap[index];
+        while (index > 0) {
+            const parentIndex = Math.floor((index - 1) / 2);
+            const parent = this.heap[parentIndex];
+            if (element[0] >= parent[0]) break;
+            this.heap[index] = parent;
+            index = parentIndex;
+        }
+        this.heap[index] = element;
+    }
+
+    _heapifyDown(index) {
+        const length = this.heap.length;
+        const element = this.heap[index];
+        while (true) {
+            const leftChildIndex = 2 * index + 1;
+            const rightChildIndex = 2 * index + 2;
+            let swap = null;
+            if (leftChildIndex < length) {
+                const leftChild = this.heap[leftChildIndex];
+                if (leftChild[0] < element[0]) swap = leftChildIndex;
+            }
+            if (rightChildIndex < length) {
+                const rightChild = this.heap[rightChildIndex];
+                if (
+                    (swap === null && rightChild[0] < element[0]) ||
+                    (swap !== null && rightChild[0] < this.heap[swap][0])
+                ) {
+                    swap = rightChildIndex;
+                }
+            }
+            if (swap === null) break;
+            this.heap[index] = this.heap[swap];
+            this.heap[swap] = element;
+            index = swap;
+        }
+    }
+}
+var minimumCost = function(source, target, original, changed, cost) {
+    let adj = new Map();
+
+    original.forEach((src, index) => {
+        const dist = changed[index]
+        const currentCost = cost[index]
+
+        if (!adj.has(src)) {
+            adj.set(src, [])
+        }
+
+        adj.get(src).push([dist, currentCost])
+    })
+
+
+    const dijkstra = (src) => {
+        const heap = new MinHeap()
+        heap.push([0, src])
+        let min_cost_map = {}
+
+        while (heap.heap.length > 0) {
+            const [cost, node] = heap.pop()
+            if (node in min_cost_map) continue
+
+            min_cost_map[node] = cost
+
+            const neighbors = adj.get(node) || []
+            for (const [nei, nei_cost] of neighbors) {
+                if (!(nei in min_cost_map)) { 
+                    heap.push([nei_cost + cost, nei])
+                }
+            }
+        }
+
+        return min_cost_map
+};
+
+
+    const min_cost_maps = Array.from(new Set(source)).reduce((map, c) => {
+        map[c] = dijkstra(c)
+        return map
+    }, {})
+
+    let res = 0
+    for (let i = 0; i < source.length; i++) {
+        const src = source[i]
+        const dist = target[i]
+        if (!(dist in min_cost_maps[src])) {
+            return -1
+        }
+        res += min_cost_maps[src][dist]; 
+    }
+    return res
+
+
+};
