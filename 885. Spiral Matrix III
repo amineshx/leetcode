@@ -1,0 +1,50 @@
+// from typing import List
+// class Solution:
+//     def spiralMatrixIII(self, rows: int, cols: int, rStart: int, cStart: int) -> List[List[int]]:
+//         directions=[[0,1],[1,0],[0,-1],[-1,0]]
+//         res=[]
+//         r,c=rStart,cStart
+//         steps=1
+//         i=0
+//         while len(res)< rows*cols: 
+//             for x in range(2):   
+//                 dr,dc=directions[i]
+//                 for y in range(steps):
+//                     if (0<=r<rows and 0<=c<cols):
+//                         res.append([r,c])
+//                     r,c=r+dr,c+dc
+//                 i=(i+1)%4
+//             steps+=1
+//         return res
+
+
+/**
+ * @param {number} rows
+ * @param {number} cols
+ * @param {number} rStart
+ * @param {number} cStart
+ * @return {number[][]}
+ */
+var spiralMatrixIII = function(rows, cols, rStart, cStart) {
+    const directions=[[0,1],[1,0],[0,-1],[-1,0]]
+    let res=[]
+    let r=rStart
+    let c=cStart
+    let steps=1
+    let i=0
+    while(res.length<rows*cols){
+        for(let x=0;x<2;x++){
+            const [dr,dc]=directions[i]
+            for(let y=0; y<steps;y++){
+                if (0 <= r && r < rows && 0 <= c && c < cols){
+                    res.push([r,c])
+                }
+                r=r+dr
+                c=c+dc
+            }
+            i=(i+1)%4
+        }
+        steps++
+    }
+    return res
+};
