@@ -5,11 +5,17 @@ class KthLargest:
     def __init__(self, k: int, nums: List[int]):
         self.minHip, self.k = nums, k
         heapq.heapify(self.minHip)
-        print(self.minHip)
-    # def add(self, val: int) -> int:
+        while len(self.minHip)>k:
+            heapq.heappop(self.minHip)
+
+    def add(self, val: int) -> int:
+        heapq.heappush(self.minHip, val)
+        if len(self.minHip)>self.k:
+            heapq.heappop(self.minHip)
+        return self.minHip[0]
         
 
 
 # Your KthLargest object will be instantiated and called as such:
-obj = KthLargest(3,[[4, 5, 8, 2], [3], [5], [10], [9], [4]])
+# obj = KthLargest(k, nums)
 # param_1 = obj.add(val)
