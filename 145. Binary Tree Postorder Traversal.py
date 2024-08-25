@@ -26,3 +26,11 @@ class Solution:
                     stack.append(cur.left)
                     visited.append(False)
         return res
+
+root = TreeNode(1)
+root.right = TreeNode(2)
+root.right.left = TreeNode(3)
+
+
+sol = Solution()
+print(sol.postorderTraversal(root)) 
