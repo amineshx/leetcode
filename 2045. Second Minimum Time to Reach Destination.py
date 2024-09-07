@@ -11,7 +11,7 @@ class Solution:
         res =-1
         visit_times=defaultdict(list)   
         while q:
-            for i in range(len(q)):
+            for _ in range(len(q)):
                 node = q.popleft()
                 if node ==n:
                     if res !=-1:
@@ -25,3 +25,6 @@ class Solution:
             if(current_time//change)%2==1:
                 current_time+=change-(current_time%change)
             current_time+=time
+
+sol = Solution()
+print(sol.secondMinimum(n = 5, edges = [[1,2],[1,3],[1,4],[3,4],[4,5]], time = 3, change = 5))
