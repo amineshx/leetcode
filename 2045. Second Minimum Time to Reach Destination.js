@@ -100,4 +100,4 @@ var secondMinimum = function(n, edges, time, change) {
     return dist[n-1][1];
 };
 
-console.log(secondMinimum( n = 5, edges = [[1,2],[1,3],[1,4],[3,4],[4,5]], time = 3, change = 5))
+console.log(secondMinimum(n = 2, edges = [[1,2]], time = 3, change = 2))
