@@ -32,3 +32,40 @@ class Solution:
                 self.helper(list_node.next, tree_node.left) or 
                 self.helper(list_node.next, tree_node.right)
             )
+
+
+def create_linked_list(arr):
+    head = ListNode(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+# Function to create a binary tree from a list
+def create_tree(nodes):
+    if not nodes:
+        return None
+    root = TreeNode(nodes[0])
+    queue = [root]
+    i = 1
+    while i < len(nodes):
+        current = queue.pop(0)
+        if nodes[i] is not None:
+            current.left = TreeNode(nodes[i])
+            queue.append(current.left)
+        i += 1
+        if i < len(nodes) and nodes[i] is not None:
+            current.right = TreeNode(nodes[i])
+            queue.append(current.right)
+        i += 1
+    return root
+
+# Create the linked list and binary tree from input
+head = create_linked_list([4, 2, 8])
+root = create_tree([1, 4, 4, None, 2, 2, None, 1, None, 6, 8, None, None, None, None, 1, 3])
+
+# Check if the linked list is a subpath of the binary tree
+solution = Solution()
+result = solution.isSubPath(head, root)
+print(result)  # Output: True or False depending on the result
