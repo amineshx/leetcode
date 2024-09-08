@@ -31,3 +31,23 @@ class Solution:
                 cur.next , cur = None,cur.next
 
         return res
+
+
+def create_linked_list(arr):
+    head = ListNode(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+
+
+# Create the linked list and binary tree from input
+head = create_linked_list([1,2,3])
+k = 5
+
+# Check if the linked list is a subpath of the binary tree
+solution = Solution()
+result = solution.splitListToParts(head,k)
+print(result)  # Output: True or False depending on the result
