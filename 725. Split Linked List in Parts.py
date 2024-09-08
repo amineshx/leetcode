@@ -41,13 +41,19 @@ def create_linked_list(arr):
         current = current.next
     return head
 
+def linked_list_to_list(head: Optional[ListNode]) -> List[int]:
+    result = []
+    while head:
+        result.append(head.val)
+        head = head.next
+    return result
 
 
 # Create the linked list and binary tree from input
 head = create_linked_list([1,2,3])
 k = 5
 
-# Check if the linked list is a subpath of the binary tree
+# Use the Solution class to split the list
 solution = Solution()
 result = solution.splitListToParts(head,k)
-print(result)  # Output: True or False depending on the result
+print([linked_list_to_list(part) for part in result])
