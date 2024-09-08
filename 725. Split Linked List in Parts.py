@@ -20,7 +20,8 @@ class Solution:
         res = []
         for _ in range(k):
             res.append(cur)
-            for __ in range(sub_length-1 + (1 if remainder else 0)):
+            loop_range = sub_length-1 + (1 if remainder else 0)
+            for __ in range(loop_range):
                 if not cur:
                     break
                 cur=cur.next
