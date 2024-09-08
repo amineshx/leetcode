@@ -15,3 +15,18 @@ class Solution:
             cur=cur.next
             length+=1
         
+        sub_length , remainder = length // k , length%k
+        cur = head
+        res = []
+        for _ in range(k):
+            res.append(cur)
+            for __ in range(sub_length-1 + (1 if remainder else 0)):
+                if not cur:
+                    break
+                cur=cur.next
+
+            remainder-=(1 if remainder else 0)
+            if cur:
+                cur.next , cur = None,cur.next
+
+        return res
