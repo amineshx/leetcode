@@ -62,3 +62,23 @@ class Solution:
             dirR , dirC = directions[direction]
             row,col = row+dirR , col+dirC
         return res
+    
+
+def create_linked_list(arr):
+    head = ListNode(arr[0])
+    current = head
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    return head
+
+
+
+
+# Create the linked list and binary tree from input
+head = create_linked_list([3,0,2,6,8,1,7,9,4,2,5,5,0])
+n=5
+m=3
+solution = Solution()
+result = solution.spiralMatrix(m,n,head)
+print(result)
