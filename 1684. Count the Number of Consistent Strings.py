@@ -12,3 +12,6 @@ class Solution:
             if check==True:
                 res+=1 
         return res
+
+sol =Solution()
+print(sol.countConsistentStrings(allowed = "ab", words = ["ad","bd","aaab","baa","badab"]))
