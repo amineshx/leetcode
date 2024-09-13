@@ -40,3 +40,5 @@ class Solution:
             res.append(total^remove)
         return res
     
+sol = Solution()
+print(sol.xorQueries( arr = [1,3,4,8], queries = [[0,1],[1,2],[0,3],[3,3]]))
