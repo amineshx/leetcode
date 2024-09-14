@@ -30,3 +30,6 @@ class Solution:
                 size=0
             res = max(res,size)
         return res
+    
+sol =Solution()
+print(sol.longestSubarray(nums = [1,2,3,3,2,2]))
