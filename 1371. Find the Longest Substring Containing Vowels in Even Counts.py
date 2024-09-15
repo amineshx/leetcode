@@ -36,3 +36,6 @@ class Solution:
             else:
                 mask_to_index[mask]=i
         return res
+
+sol = Solution()
+print(sol.findTheLongestSubstring(s = "eleetminicoworoep"))
