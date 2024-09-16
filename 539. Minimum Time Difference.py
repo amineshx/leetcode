@@ -17,3 +17,6 @@ class Solution:
         HH,MM=map(int,t.split(":"))
 
         return 60*HH + MM
+
+sol = Solution()
+print(sol.findMinDifference(timePoints = ["23:59","00:00"]))
