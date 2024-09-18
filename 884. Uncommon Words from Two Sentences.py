@@ -18,3 +18,5 @@ class Solution:
         count = Counter(s1.split(" ") + s2.split(" "))
         return [w for w,cnt in count.items() if cnt == 1]
 
+sol = Solution()
+print(sol.uncommonFromSentences(s1 = "this apple is sweet", s2 = "this apple is sour"))
