@@ -15,4 +15,7 @@ class Solution:
             return -1
         else:
             return 1
+
+sol = Solution()
+print(sol.largestNumber([3,30,34,5,9]))
     
