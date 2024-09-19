@@ -53,5 +53,8 @@ class Solution:
         if res==[]:
             res.append(int(expression))
         return res
+
+sol = Solution()
+print(sol.diffWaysToCompute("2-1-1"))
         
     
