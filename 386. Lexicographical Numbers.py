@@ -4,3 +4,5 @@ class Solution:
         return sorted([c for c in range(1, n+1)], key=str)
 
        
+sol = Solution()
+print(sol.lexicalOrder(n=13))
