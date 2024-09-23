@@ -56,7 +56,8 @@ class Trie:
         
 class Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
-        word_set = set(dictionary)
+
+        trie = Trie(dictionary).root
         dp={ len(s):0 }
 
         def DFS(i):
@@ -64,8 +65,14 @@ class Solution:
                 return dp[i]
             
             res = 1+ DFS(i+1)
+            curr=trie
             for j in range(i,len(s)):
-                
+                if s[j] not in curr.children:
+                    break
+
+                curr= curr.children[s[j]]
+                if curr.word:
+                    res=min(res, DFS(j+1))
             dp[i]=res
             return res
         
