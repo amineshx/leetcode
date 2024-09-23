@@ -35,3 +35,38 @@ class Solution:
             return res
         
         return DFS(0)
+    
+
+#trie solution3
+class TrieNode:
+    def __init__(self):
+        self.children={}
+        self.word=False
+
+class Trie:
+    def __init__(self,words):
+        self.root=TrieNode()
+        for w in words:
+            curr =self.root
+            for c in w :
+                if c not in curr.children:
+                    curr.children[c]=TrieNode()
+                curr=curr.children[c]
+            curr.word=True
+        
+class Solution:
+    def minExtraChar(self, s: str, dictionary: List[str]) -> int:
+        word_set = set(dictionary)
+        dp={ len(s):0 }
+
+        def DFS(i):
+            if i in dp:
+                return dp[i]
+            
+            res = 1+ DFS(i+1)
+            for j in range(i,len(s)):
+                
+            dp[i]=res
+            return res
+        
+        return DFS(0)
