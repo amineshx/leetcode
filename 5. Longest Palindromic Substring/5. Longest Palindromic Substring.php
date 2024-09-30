@@ -1,3 +1,4 @@
+<?php
 class Solution {
 
     /**
@@ -6,12 +7,11 @@ class Solution {
      */
     function longestPalindrome($s) {
         $n = strlen($s);
-        $start = 0;   // starting index of the longest palindrom
-        $maxLen = 1;   // the current max length of the palindrom
+        $start = 0;   
+        $maxLen = 1;  
         
-        $arrOfChecks = array_fill(0, $n, array_fill(0, $n, false)); // insialising a 2d array with false 
+        $arrOfChecks = array_fill(0, $n, array_fill(0, $n, false)); 
         
-        // All substrings of length 1 are palindromes
         for ($i = 0; $i < $n; $i++) {
             $arrOfChecks[$i][$i] = true;
         }
@@ -43,3 +43,4 @@ class Solution {
 
         }
 }
+?>
