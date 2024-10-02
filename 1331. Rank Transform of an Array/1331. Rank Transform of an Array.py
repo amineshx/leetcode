@@ -6,3 +6,6 @@ class Solution:
         sorted_unique = sorted(set(arr))
         rank_map = {val: rank + 1 for rank, val in enumerate(sorted_unique)}        
         return [rank_map[num] for num in arr]
+
+sol =Solution()
+print(sol.arrayRankTransform([40,10,20,30]))
