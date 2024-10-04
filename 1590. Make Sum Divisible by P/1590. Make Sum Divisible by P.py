@@ -18,3 +18,7 @@ class Solution:
                 res= min(res, length)
             remainder_to_index[current_sum]=i
         return -1 if res== len(nums) else res
+
+
+sol = Solution()
+print(sol.minSubarray(nums = [3,1,4,2], p = 6))
