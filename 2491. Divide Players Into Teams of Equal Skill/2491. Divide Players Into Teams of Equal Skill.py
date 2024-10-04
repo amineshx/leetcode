@@ -20,3 +20,7 @@ class Solution:
             left+=1
             right-=1
         return res
+
+
+sol = Solution()
+print(sol.dividePlayers(skill = [3,2,5,1,3,4]))
