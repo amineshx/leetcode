@@ -15,3 +15,6 @@ class Solution:
             right1,right2 = right1-1, right2-1
         
         return left1 > right1
+
+sol = Solution()
+print(sol.areSentencesSimilar(sentence1 = "My name is Haley", sentence2 = "My Haley"))
