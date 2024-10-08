@@ -1,5 +1,7 @@
 class Solution:
     def minSwaps(self, s: str) -> int:
+        if s=='[]' : 
+            return 0
         close, maxClose = 0,0
 
         for c in s:
