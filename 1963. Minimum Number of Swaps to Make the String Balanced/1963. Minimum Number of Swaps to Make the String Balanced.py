@@ -11,4 +11,5 @@ class Solution:
                 close+=1
             maxClose = max(close,maxClose)
         
-        return maxClose//2 +1
+        return (maxClose+1)//2
+    
