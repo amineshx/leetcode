@@ -12,4 +12,6 @@ class Solution:
             maxClose = max(close,maxClose)
         
         return (maxClose+1)//2
-    
+
+sol = Solution()
+print(sol.minSwaps(s = "]]][[["))
