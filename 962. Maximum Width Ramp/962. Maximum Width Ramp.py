@@ -19,5 +19,23 @@ class Solution:
             res = max(res,right-left)
         return res 
 
+
+# using monoMonotonic Stack
+class Solution:
+    def maxWidthRamp(self, nums: List[int]) -> int:
+        stack = []
+        max_width = 0
+        
+        for i in range(len(nums)):
+            if not stack or nums[i] < nums[stack[-1]]:
+                stack.append(i)
+        
+        for j in range(len(nums) - 1, -1, -1):
+            while stack and nums[stack[-1]] <= nums[j]:
+                i = stack.pop()
+                max_width = max(max_width, j - i)
+        
+        return max_width
+
 sol = Solution()
 print(sol.maxWidthRamp(nums = [6,0,8,2,1,5]))
