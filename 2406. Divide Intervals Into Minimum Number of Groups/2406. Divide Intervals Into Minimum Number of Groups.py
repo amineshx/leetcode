@@ -24,3 +24,6 @@ class Solution:
             
             res = max(res,groups)
         return res
+
+sol = Solution()
+print(sol.minGroups([[5,10],[6,8],[1,5],[2,3],[1,10]]))
