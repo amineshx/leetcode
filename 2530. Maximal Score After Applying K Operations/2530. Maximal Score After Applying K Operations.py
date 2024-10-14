@@ -12,3 +12,6 @@ class Solution:
             heapq.heappush(max_heap, -math.ceil(num/3))
         
         return res
+
+sol = Solution()
+print(sol.maxKelements(nums = [10,10,10,10,10], k = 5))
