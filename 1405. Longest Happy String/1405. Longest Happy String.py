@@ -25,3 +25,6 @@ class Solution:
             if count:
                 heapq.heappush(maxHeap, (count,c))
         return res
+
+sol = Solution()
+print(sol.longestDiverseString(a = 1, b = 1, c = 7))
