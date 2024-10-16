@@ -1,3 +1,5 @@
+#this sol doesn't work
+
 class Solution:
     def minimumSteps(self, s: str) -> int:
         n = len(s)-1
@@ -24,6 +26,20 @@ class Solution:
                 i-=1
         return res
 
+# this sol doesn't work
+class Solution:
+    def minimumSteps(self, s: str) -> int:
+        n=len(s)
+        white_count=0
+        swaps=0
+
+        for i in range(n):
+            if s[i]=='0':
+                white_count+=1
+            else:
+                swaps+=white_count
+        return swaps
+    
 sol = Solution()
 print(sol.minimumSteps("101"))
 
