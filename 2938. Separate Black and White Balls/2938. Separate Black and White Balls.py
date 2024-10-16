@@ -39,7 +39,22 @@ class Solution:
             else:
                 swaps+=white_count
         return swaps
-    
+
+class Solution:
+    def minimumSteps(self, s: str) -> int:
+        zero_count = 0  
+        swaps = 0  
+        
+        
+        for i in range(len(s) - 1, -1, -1):
+            if s[i] == '0':
+               
+                zero_count += 1
+            else:
+               
+                swaps += zero_count
+        
+        return swaps
 sol = Solution()
 print(sol.minimumSteps("101"))
 
