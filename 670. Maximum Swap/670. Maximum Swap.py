@@ -15,3 +15,6 @@ class Solution:
         num[swap_i],num[swap_j]  = num[swap_j],num[swap_i]
 
         return int("".join(num))
+
+sol = Solution()
+print(sol.maximumSwap(num = 2736))
