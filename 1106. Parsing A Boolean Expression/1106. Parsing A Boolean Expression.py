@@ -24,4 +24,6 @@ class Solution:
                 else:
                     st.append("t" if has_true else "f")
         return st[-1] == "t"
-    
+
+sol = Solution()
+print(sol.parseBoolExpr("&(|(f))"))
