@@ -8,3 +8,6 @@ class Solution:
             if not folder[i].startswith(last_folder):
                 ans.append(folder[i])
         return ans
+
+sol =Solution()
+print(sol.removeSubfolders(folder = ["/a","/a/b","/c/d","/c/d/e","/c/f"]))
