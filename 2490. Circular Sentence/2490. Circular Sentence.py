@@ -11,3 +11,5 @@ class Solution:
             return False
         return True
 
+sol = Solution()
+print(sol.isCircularSentence("amine end duck kola"))
