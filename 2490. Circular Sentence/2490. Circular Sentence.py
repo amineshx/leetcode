@@ -3,7 +3,6 @@ class Solution:
         i=0
         while i <len(sentence)-1:
             if sentence[i]==" " and i!= 0:
-                single_word=False
                 if sentence[i-1]!=sentence[i+1]:
                     return False
             i+=1
