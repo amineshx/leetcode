@@ -12,3 +12,6 @@ class Solution:
                 cnt = 1
         comp += str(cnt) + ch
         return comp
+
+sol = Solution()
+print(sol.compressedString(word = "abcde"))
