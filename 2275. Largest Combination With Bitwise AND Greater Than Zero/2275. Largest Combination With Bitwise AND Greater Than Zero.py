@@ -8,3 +8,6 @@ class Solution:
                     bit_counts[i] += 1
 
         return max(bit_counts)
+
+sol = Solution()
+print(sol.largestCombination(candidates = [16,17,71,62,12,24,14]))
