@@ -19,3 +19,6 @@ class Solution:
                 left = x+1
         
         return res
+
+sol = Solution()
+print(sol.minimizedMaximum(n = 6, quantities = [11,6]))
