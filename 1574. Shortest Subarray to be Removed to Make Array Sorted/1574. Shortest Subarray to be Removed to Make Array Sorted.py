@@ -16,3 +16,6 @@ class Solution:
                 break
             left+=1
         return res
+
+sol = Solution()
+print(sol.findLengthOfShortestSubarray(arr = [1,2,3,10,4,2,3,5]))
