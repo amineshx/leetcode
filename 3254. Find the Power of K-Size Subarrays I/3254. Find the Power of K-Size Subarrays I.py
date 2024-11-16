@@ -18,4 +18,4 @@ class Solution:
             left+=1
         return res
 
-
+sol = Solution(nums = [1,2,3,4,3,2,5], k = 3)
