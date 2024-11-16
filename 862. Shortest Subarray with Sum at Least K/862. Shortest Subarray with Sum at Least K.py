@@ -18,3 +18,6 @@ class Solution:
             back+=1
             dp[back]=r
         return Len if Len!=10**9 else -1
+
+sol =Solution()
+print(sol.shortestSubarray(nums = [2,-1,2], k = 3))
