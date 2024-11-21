@@ -22,3 +22,6 @@ class Solution:
             ans = min(ans, n - (r - l))
 
         return ans
+
+sol = Solution()
+print(sol.takeCharacters(s = "aabaaaacaabc", k = 2))
