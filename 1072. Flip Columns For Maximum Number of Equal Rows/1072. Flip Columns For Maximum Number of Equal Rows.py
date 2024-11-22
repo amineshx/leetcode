@@ -11,4 +11,6 @@ class Solution:
             count[row_id]+=1
         
         return max(count.values())
-    
+
+sol =Solution()
+print(sol.maxEqualRowsAfterFlips(matrix = [[0,1],[1,1]]))
