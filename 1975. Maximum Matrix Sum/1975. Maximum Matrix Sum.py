@@ -15,3 +15,6 @@ class Solution:
             total_sum -= 2 * min_abs_value
         
         return total_sum
+
+sol = Solution()
+print(sol.maxMatrixSum(matrix = [[1,2,3],[-1,-2,-3],[1,2,3]]))
