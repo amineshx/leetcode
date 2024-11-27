@@ -23,3 +23,6 @@ class Solution:
             adjacency_list[source].append(dist)
             res.append(BFS())
         return res
+
+sol = Solution()
+print(sol.shortestDistanceAfterQueries(n = 5, queries = [[2,4],[0,2],[0,4]]))
