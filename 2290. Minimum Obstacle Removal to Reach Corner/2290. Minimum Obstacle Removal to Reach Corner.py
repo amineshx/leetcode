@@ -24,3 +24,5 @@ class Solution:
                     q.appendleft((obstacle,neibore_row,neibore_col))
                 visited.add((neibore_row, neibore_col))
         
+sol = Solution()
+print(sol.minimumObstacles(grid = [[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0]]))
