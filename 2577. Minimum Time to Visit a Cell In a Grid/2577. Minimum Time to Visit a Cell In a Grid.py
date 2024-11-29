@@ -27,3 +27,6 @@ class Solution:
                 n_time = max(grid[neibore_row][neibore_col]+ time_to_wait, time+1)
                 heapq.heappush(min_heap,(n_time,neibore_row,neibore_col))
                 visited.add((neibore_row,neibore_col))
+
+sol = Solution()
+print(sol.minimumTime(grid = [[0,1,3,2],[5,1,2,5],[4,3,8,6]]))
