@@ -25,3 +25,6 @@ class Solution:
 
         dfs(startNode)
         return path[::-1]
+
+sol = Solution()
+print(sol.validArrangement(pairs = [[5,1],[4,5],[11,9],[9,4]]))
