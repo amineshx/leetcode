@@ -5,3 +5,6 @@ class Solution:
             if char.startswith(searchWord):
                 return i+1
         return -1
+
+sol = Solution()
+print(sol.isPrefixOfWord(sentence = "i love eating burger", searchWord = "burg"))
