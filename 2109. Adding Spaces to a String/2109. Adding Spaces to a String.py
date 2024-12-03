@@ -10,3 +10,5 @@ class Solution:
         res.append(s[prev_idx:])
         return ''.join(res)
 
+sol = Solution()
+print(sol.addSpaces(s = "LeetcodeHelpsMeLearn", spaces = [8,13,15]))
