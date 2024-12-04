@@ -9,8 +9,6 @@ class Solution:
                 j+=1
             i+=1
         return j==len(str2)
-                
-
-           
-
+sol =Solution()
+print(sol.canMakeSubsequence(str1 = "abc", str2 = "ad"))
 
