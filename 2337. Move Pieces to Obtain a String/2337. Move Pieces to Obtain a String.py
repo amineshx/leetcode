@@ -22,3 +22,6 @@ class Solution:
                     return False
                 left-=1
         return left==0 and right==0
+
+sol = Solution()
+print(sol.canChange(start = "R_L_", target = "__LR"))
