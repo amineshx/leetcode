@@ -12,4 +12,5 @@ class Solution:
             i+=1
         return count
 
-
+sol = Solution()
+print(sol.maxCount(banned = [1,6,5], n = 5, maxSum = 6))
