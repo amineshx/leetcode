@@ -20,3 +20,6 @@ class Solution:
                 left = mid+1
         return left
 
+sol = Solution()
+print(sol.minimumSize(nums = [2,4,8,2], maxOperations = 4))
+
