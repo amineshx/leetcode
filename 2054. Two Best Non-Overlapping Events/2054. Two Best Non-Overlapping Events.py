@@ -30,3 +30,5 @@ class Solution:
         
         return maxSum
 
+sol = Solution()
+print(sol.maxTwoEvents(events = [[1,3,2],[4,5,2],[2,4,3]]))
