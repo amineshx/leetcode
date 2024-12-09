@@ -12,3 +12,6 @@ class Solution:
                 if nums[i+1]%2!=0:
                     return False
         return True
+
+sol = Solution()
+print(sol.isArraySpecial(nums = [2,1,4]))
