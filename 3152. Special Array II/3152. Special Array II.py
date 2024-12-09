@@ -39,3 +39,6 @@ class Solution:
         for start, end in queries:
             result.append(segment_id[start] == segment_id[end])
         return result
+    
+sol = Solution()
+print(sol.isArraySpecial(nums = [4,3,1,6], queries = [[0,2],[2,3]]))
