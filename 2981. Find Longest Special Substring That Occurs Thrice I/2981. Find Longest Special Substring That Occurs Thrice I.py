@@ -24,3 +24,7 @@ class Solution:
             if count[ord(s[i])-ord('a')]>2:
                 return True
         return False
+
+sol = Solution()
+print(sol.maximumLength(s = "abcaba"))
+print(sol.maximumLength(s = "aaaa" ))
