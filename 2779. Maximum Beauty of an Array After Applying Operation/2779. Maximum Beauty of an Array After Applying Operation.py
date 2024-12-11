@@ -23,3 +23,6 @@ class Solution:
                 result = range_array[i]
 
         return result
+
+sol = Solution()
+print(sol.maximumBeauty(nums = [4,6,1,2], k = 2))
