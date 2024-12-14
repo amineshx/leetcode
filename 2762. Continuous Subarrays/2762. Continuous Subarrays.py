@@ -23,3 +23,6 @@ class Solution:
             res += r - l + 1
         
         return res
+
+sol = Solution()
+print(sol.continuousSubarrays(nums = [5,4,2,4]))
