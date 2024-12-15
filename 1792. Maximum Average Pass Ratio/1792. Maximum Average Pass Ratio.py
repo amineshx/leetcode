@@ -19,3 +19,6 @@ class Solution:
             heapq.heapreplace(arr,(r2,p+1,q+1))
         
         return summ/n
+
+sol = Solution()
+print(sol.maxAverageRatio(classes = [[1,2],[3,5],[2,2]], extraStudents = 2))
