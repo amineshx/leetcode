@@ -10,4 +10,7 @@ class Solution:
             i+=1
         return nums
 
+sol = Solution()
+print(sol.getFinalState( nums = [2,1,3,5,6], k = 5, multiplier = 2))
+
 
