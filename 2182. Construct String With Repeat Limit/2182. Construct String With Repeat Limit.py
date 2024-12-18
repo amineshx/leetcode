@@ -23,3 +23,6 @@ class Solution:
         
         return "".join(res)
 
+sol = Solution()
+print(sol.repeatLimitedString(s = "cczazcc", repeatLimit = 3))
+
