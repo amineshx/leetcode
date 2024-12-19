@@ -10,4 +10,6 @@ class Solution:
             if stack: ans[i]-=prices[stack[-1]]
             stack.append(i)
         return ans
-        
+
+sol = Solution()
+print(sol.finalPrices(prices = [8,4,6,2,3]))
