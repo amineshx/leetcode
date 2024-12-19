@@ -9,3 +9,6 @@ class Solution:
             if current_max==i:
                 res+=1
         return res
+
+sol = Solution()
+print(sol.maxChunksToSorted(arr = [4,3,2,1,0]))
