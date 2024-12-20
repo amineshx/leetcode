@@ -42,3 +42,39 @@ def build_tree(values):
                 node.right = kids.pop()
     return root
 
+
+
+''' 
+    just to execute the code 
+'''
+
+# Helper function to print the tree level order (for testing)
+def print_tree(root):
+    if not root:
+        return []
+    result, q = [], deque([root])
+    while q:
+        node = q.popleft()
+        if node:
+            result.append(node.val)
+            q.append(node.left)
+            q.append(node.right)
+        else:
+            result.append(None)
+    # Remove trailing None values for a cleaner output
+    while result and result[-1] is None:
+        result.pop()
+    return result
+
+# Input list
+values = [2, 3, 5, 8, 13, 21, 34]
+
+# Build the tree
+root = build_tree(values)
+
+# Solution
+sol = Solution()
+result_root = sol.reverseOddLevels(root)
+
+# Print the result tree
+print(print_tree(result_root))
