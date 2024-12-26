@@ -15,3 +15,6 @@ class Solution:
             return memo[(i,current_sum)]
         
         return backtracking(0,0)
+
+sol = Solution()
+print(sol.findTargetSumWays( nums = [1,1,1,1,1], target = 3))
