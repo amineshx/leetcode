@@ -8,3 +8,6 @@ class Solution:
             current_max= max(current_max-1, values[i]-1)
 
         return res
+
+sol = Solution()
+print(sol.maxScoreSightseeingPair(values = [8,1,5,2,6]))
