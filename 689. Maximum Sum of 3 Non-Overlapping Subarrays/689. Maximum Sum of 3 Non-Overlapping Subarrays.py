@@ -34,3 +34,6 @@ class Solution:
                 res = [index12_1, index12_2, i + 2 * k]
 
         return res
+
+sol = Solution()
+print(sol.maxSumOfThreeSubarrays(nums = [1,2,1,2,6,7,5,1], k = 2))
