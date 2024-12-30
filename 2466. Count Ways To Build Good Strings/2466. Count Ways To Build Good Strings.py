@@ -16,4 +16,6 @@ class Solution:
             return memo[length] % modulo
         
         return dfs(0)
-            
+
+sol = Solution()
+print(sol.countGoodStrings(low = 3, high = 3, zero = 1, one = 1))
