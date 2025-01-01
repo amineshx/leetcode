@@ -13,3 +13,6 @@ class Solution:
             
             res = max(res, zeros+ones)
         return res
+
+sol =Solution()
+print(sol.maxScore(s = "011101"))
