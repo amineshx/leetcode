@@ -16,3 +16,7 @@ class Solution:
             left, right = querie
             res[i] = prefix[right+1]-prefix[left]
         return res
+
+sol = Solution()
+print(sol.vowelStrings(words = ["aba","bcb","ece","aa","e"], queries = [[0,2],[1,4],[1,1]]))
+print(sol.vowelStrings(words = ["a","e","i"], queries = [[0,2],[0,1],[2,2]]))
