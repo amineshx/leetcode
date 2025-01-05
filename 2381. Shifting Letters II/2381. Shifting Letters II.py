@@ -17,3 +17,6 @@ class Solution:
             shiftList[i] = chr((ord(shiftList[i]) - ord('a') + netShift) % 26 + ord('a'))
 
         return ''.join(shiftList)
+
+sol =Solution()
+print(sol.shiftingLetters(s = "abc", shifts = [[0,1,0],[1,2,1],[0,2,1]]))
