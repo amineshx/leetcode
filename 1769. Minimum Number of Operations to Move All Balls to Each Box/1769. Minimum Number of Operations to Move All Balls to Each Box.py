@@ -17,3 +17,6 @@ class Solution:
             balles+=int(boxes[i])
         
         return res
+
+sol = Solution()
+print(sol.minOperations(boxes = "001011"))
