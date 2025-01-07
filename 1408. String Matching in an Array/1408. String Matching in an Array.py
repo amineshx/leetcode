@@ -11,3 +11,6 @@ class Solution:
                     break
 
         return ans
+
+sol = Solution()
+print(sol.stringMatching(words = ["mass","as","hero","superhero"]))
