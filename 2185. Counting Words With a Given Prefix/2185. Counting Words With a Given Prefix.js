@@ -12,3 +12,6 @@ var prefixCount = function(words, pref) {
   }
   return res  
 };
+
+const sol=prefixCount(words = ["pay","attention","practice","attend"], pref = "at")
+console.log(sol)
