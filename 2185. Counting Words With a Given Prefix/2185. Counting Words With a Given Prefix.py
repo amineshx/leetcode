@@ -7,3 +7,6 @@ class Solution:
                 res+=1
         
         return res
+
+sol = Solution()
+print(sol.prefixCount(words = ["pay","attention","practice","attend"], pref = "at"))
