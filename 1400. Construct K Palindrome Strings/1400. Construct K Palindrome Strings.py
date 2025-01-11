@@ -10,3 +10,6 @@ class Solution:
             odd += cnt%2
         
         return odd <=k
+
+sol = Solution()
+print(sol.canConstruct(s = "annabelle", k = 2))
