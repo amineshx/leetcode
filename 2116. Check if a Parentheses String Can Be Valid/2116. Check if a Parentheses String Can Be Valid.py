@@ -37,3 +37,7 @@ class Solution:
                     return False
         
         return True
+
+
+sol = Solution()
+print(sol.canBeValid(s = "))()))", locked = "010100"))
