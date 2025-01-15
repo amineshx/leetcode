@@ -10,3 +10,6 @@ class Solution:
                 res ^= 1 << i
                 x += 1
         return res
+
+sol = Solution()
+print(sol.minimizeXor(num1 = 3, num2 = 5))
