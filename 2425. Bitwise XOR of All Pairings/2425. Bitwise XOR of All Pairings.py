@@ -12,3 +12,6 @@ class Solution:
             for i in nums1:
                 x ^= i
         return x ^ y
+
+sol = Solution()
+print(sol.xorAllNums(nums1 = [2,1,3], nums2 = [10,2,5,0]))
