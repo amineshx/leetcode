@@ -7,3 +7,6 @@ class Solution:
                 x=~x
         
         return 0==x
+
+sol = Solution()
+print(sol.doesValidArrayExist(derived = [1,1,0]))
