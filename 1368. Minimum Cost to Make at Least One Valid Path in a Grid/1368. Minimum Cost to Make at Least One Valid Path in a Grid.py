@@ -29,3 +29,6 @@ class Solution:
                     q.appendleft((nrow,ncol,n_coast))
                 else:
                     q.append((nrow,ncol,n_coast))
+
+sol = Solution()
+print(sol.minCost(grid = [[1,1,1,1],[2,2,2,2],[1,1,1,1],[2,2,2,2]]))
