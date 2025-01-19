@@ -22,7 +22,7 @@ class Solution:
                 if (Drow<0 or Dcol< 0 or Drow==n or Dcol == m or heightMap[Drow][Dcol]==-1):
                     continue
 
-                heappush(min_heap,(heightMap[Drow][Dcol], Drow,Dcol))
+                heappush(min_heap,(heightMap[Drow][Dcol],Drow,Dcol))
                 heightMap[Drow][Dcol]=-1
         return  res
 
