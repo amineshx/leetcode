@@ -23,3 +23,4 @@ class Solution:
 sol = Solution()
 print(sol.firstCompleteIndex(arr = [1,3,4,2], mat = [[1,4],[2,3]]))
 print(sol.firstCompleteIndex(arr = [1,4,5,2,6,3], mat = [[4,3,5],[1,2,6]]))
+print(sol.firstCompleteIndex(arr = [2,8,7,4,1,3,5,6,9], mat = [[3,2,5],[1,4,6],[8,7,9]]))
