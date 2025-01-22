@@ -26,3 +26,4 @@ class Solution:
 
 sol =Solution()
 print(sol.updateMatrix(mat = [[0,0,0],[0,1,0],[1,1,1]]))
+print(sol.updateMatrix(mat = [[0,0,0],[0,1,0],[0,0,0]]))
