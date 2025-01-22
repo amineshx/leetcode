@@ -68,3 +68,6 @@ var highestPeak = function(isWater) {
 
     return res
 };
+
+console.log(highestPeak(isWater = [[0,1],[0,0]]))
+console.log(highestPeak(isWater = [[0,0,1],[1,0,0],[0,0,0]]))
