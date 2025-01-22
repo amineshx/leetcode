@@ -2,53 +2,69 @@
  * @param {number[][]} isWater
  * @return {number[][]}
  */
-class CustomDeque{
-    constructor(){
-        this.items = []
+class CustomQueue {
+    constructor() {
+        this.queue = []
+        this.head = 0
     }
-    append(element) {
-        this.items.push(element)
+
+    enqueue(element) {
+        this.queue.push(element)
     }
-    popleft() {
-        if (this.isEmpty()) {
-          return "Deque is empty"
-        }
-        return this.items.shift()
+
+    dequeue() {
+        if (this.isEmpty()) return null
+        return this.queue[this.head++]
     }
+
     isEmpty() {
-        return this.items.length === 0
+        return this.head >= this.queue.length
     }
-    
 }
+
 var highestPeak = function(isWater) {
     const n = isWater.length
     const m = isWater[0].length
-    const q = new CustomDeque()
+    const q = new CustomQueue()
     const res = Array.from({ length: n }, () => Array(m).fill(-1))
 
-    for (let row=0; row<n; row++){
-        for (let col=0; col<m; col++){
-            if (isWater[row][col]===1){
-                q.append([row,col])
-                res[row][col]=0
+    for (let row = 0; row < n; row++) {
+        for (let col = 0; col < m; col++) {
+            if (isWater[row][col] === 1) {
+                q.enqueue([row, col])
+                res[row][col] = 0
             }
         }
     }
 
-    while (!q.isEmpty()){
-        const [row,col] = q.popleft()
+    const directions = [
+        [1, 0],
+        [0, 1],
+        [-1, 0],
+        [0, -1]
+    ]
+    while (!q.isEmpty()) {
+        const [row, col] = q.dequeue()
         const height = res[row][col]
-        const neighbores = [[row+1,col],[row,col+1],[row-1,col],[row,col-1]]
-        for (const [rowNei, colNei] of neighbores) {
-            if (rowNei<0 || rowNei ===n || colNei<0 || colNei===m || res[rowNei][colNei]!=-1){
+
+        for (const [dRow, dCol] of directions) {
+            const newRow = row + dRow
+            const newCol = col + dCol
+
+            if (
+                newRow < 0 ||
+                newRow >= n ||
+                newCol < 0 ||
+                newCol >= m ||
+                res[newRow][newCol] !== -1
+            ) {
                 continue
             }
-            q.append([rowNei,colNei])
-            res[rowNei][colNei]=height+1
-        }
-        
-    }
-    return res
 
+            res[newRow][newCol] = height + 1
+            q.enqueue([newRow, newCol])
+        }
+    }
+
+    return res
 };
-console.log(highestPeak(isWater = [[0,1],[0,0]]))
