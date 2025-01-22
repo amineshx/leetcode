@@ -25,3 +25,7 @@ class Solution:
         
         return res
 
+
+sol = Solution()
+print(sol.highestPeak(isWater = [[0,1],[0,0]]))
+print(sol.highestPeak(isWater = [[0,0,1],[1,0,0],[0,0,0]]))
