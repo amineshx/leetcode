@@ -20,6 +20,9 @@ class Solution:
                     res+=1
         return res
 
+
+
+#sol 2
 class Solution:
     def countServers(self, grid: List[List[int]]) -> int:
         m,n = len(grid), len(grid[0])
