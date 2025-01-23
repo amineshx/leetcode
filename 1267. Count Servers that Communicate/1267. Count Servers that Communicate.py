@@ -46,3 +46,6 @@ class Solution:
             if col_sum>=2:
                 res+=unmarcked
         return res
+
+sol = Solution()
+print(sol.countServers(grid = [[1,1,0,0],[0,0,1,0],[0,0,1,0],[0,0,0,1]]))
