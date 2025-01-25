@@ -16,3 +16,8 @@ class Solution:
             j=num_to_group[num]
             res.append(groups[j].popleft())
         return res
+
+sol = Solution()
+print(sol.lexicographicallySmallestArray(nums = [1,5,3,9,8], limit = 2))
+print(sol.lexicographicallySmallestArray(nums = [1,7,6,18,2,1], limit = 3))
+print(sol.lexicographicallySmallestArray(nums = [1,7,28,19,10], limit = 3))
