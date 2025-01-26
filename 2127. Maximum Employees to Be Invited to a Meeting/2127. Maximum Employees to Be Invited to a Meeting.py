@@ -42,3 +42,8 @@ class Solution:
                 max_cycle = max(max_cycle, cycle_len)
         
         return max(max_cycle, pair_chains)
+
+sol = Solution()
+print(sol.maximumInvitations(favorite = [2,2,1,2]))
+print(sol.maximumInvitations(favorite = [1,2,0]))
+print(sol.maximumInvitations(favorite = [3,0,1,4,1]))
