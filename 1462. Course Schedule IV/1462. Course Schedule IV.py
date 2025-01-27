@@ -24,3 +24,8 @@ class Solution:
                     q.append(next_course)
         
         return [q[0] in mp[q[1]] for q in queries]
+
+sol = Solution()
+print(sol.checkIfPrerequisite(numCourses = 2, prerequisites = [[1,0]], queries = [[0,1],[1,0]]))
+print(sol.checkIfPrerequisite(numCourses = 2, prerequisites = [], queries = [[1,0],[0,1]]))
+print(sol.checkIfPrerequisite(numCourses = 3, prerequisites = [[1,2],[1,0],[2,0]], queries = [[1,0],[1,2]]))
