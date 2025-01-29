@@ -26,3 +26,7 @@ class Solution:
         for node1,node2 in edges:
             if not union_find(node1,node2):
                 return [node1,node2]
+
+sol = Solution()
+print(sol.findRedundantConnection(edges = [[1,2],[1,3],[2,3]]))
+print(sol.findRedundantConnection(edges = [[1,2],[2,3],[3,4],[1,4],[1,5]]))
