@@ -24,3 +24,7 @@ class Solution:
                         return -1
             d[root] = max(d[root], mx)
         return sum(d.values())
+
+sol = Solution()
+print(sol.magnificentSets(n = 6, edges = [[1,2],[1,4],[1,5],[2,6],[2,3],[4,6]]))
+print(sol.magnificentSets(n = 3, edges = [[1,2],[2,3],[3,1]]))
