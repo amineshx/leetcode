@@ -45,3 +45,7 @@ class Solution:
         return res
 
 
+sol = Solution()
+print(sol.largestIsland(grid = [[1,0],[0,1]]))
+print(sol.largestIsland(grid = [[1,1],[1,0]]))
+print(sol.largestIsland(grid = [[1,1],[1,1]]))
