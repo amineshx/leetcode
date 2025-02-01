@@ -10,3 +10,5 @@ var isArraySpecial = function(nums) {
     }
     return true
 };
+console.log(isArraySpecial([2, 3, 4, 5])); 
+console.log(isArraySpecial([2, 4, 3, 5])); 
