@@ -13,3 +13,8 @@ class Solution:
             if window_length==n:return True
         
         return n==1
+
+sol = Solution()
+print(sol.check(nums = [3,4,5,1,2]))
+print(sol.check(nums = [2,1,3,4]))
+print(sol.check(nums = [1,2,3]))
