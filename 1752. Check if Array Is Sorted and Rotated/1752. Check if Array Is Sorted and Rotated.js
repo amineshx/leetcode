@@ -18,3 +18,7 @@ var check = function(nums) {
     }
     return n==1
 };
+
+console.log(check(nums = [3,4,5,1,2]))
+console.log(check(nums = [2,1,3,4]))
+console.log(check(nums = [1,2,3]))
