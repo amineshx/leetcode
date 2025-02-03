@@ -45,3 +45,8 @@ class Solution:
                 increasing=0
             res = max(res,window_lenght)
         return res
+
+sol = Solution()
+print(sol.longestMonotonicSubarray(nums = [1,4,3,3,2]))
+print(sol.longestMonotonicSubarray(nums = [3,3,3,3]))
+print(sol.longestMonotonicSubarray(nums = [3,2,1]))
