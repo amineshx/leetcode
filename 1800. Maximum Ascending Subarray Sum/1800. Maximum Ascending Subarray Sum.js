@@ -21,3 +21,7 @@ var maxAscendingSum = function(nums) {
     return res
 
 };
+
+console.log(maxAscendingSum(nums = [10,20,30,5,10,50]))
+console.log(maxAscendingSum(nums = [10,20,30,40,50]))
+console.log(maxAscendingSum(nums = [12,17,15,13,10,11,12]))
