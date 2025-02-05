@@ -24,3 +24,6 @@ var areAlmostEqual = function(s1, s2) {
 
 
 console.log(areAlmostEqual(s1 = "caa", s2 = "aaz"))
+console.log(areAlmostEqual(s1 = "bank", s2 = "kanb"))
+console.log(areAlmostEqual(s1 = "attack", s2 = "defend"))
+console.log(areAlmostEqual(s1 = "kelb", s2 = "kelb"))
