@@ -13,3 +13,8 @@ class Solution:
             return False
 
         return True
+
+sol = Solution()
+print(sol.areAlmostEqual(s1 = "bank", s2 = "kanb"))
+print(sol.areAlmostEqual(s1 = "attack", s2 = "defend"))
+print(sol.areAlmostEqual(s1 = "kelb", s2 = "kelb"))
