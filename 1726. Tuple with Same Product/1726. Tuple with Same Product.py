@@ -13,3 +13,7 @@ class Solution:
         count[prod] += 1
 
     return res
+
+sol = Solution()
+print(sol.tupleSameProduct(nums = [2,3,4,6]))
+print(sol.tupleSameProduct(nums = [1,2,4,5,10]))
