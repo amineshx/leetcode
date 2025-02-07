@@ -18,3 +18,7 @@ class Solution:
             res[i]=len(color_dict)
             i+=1
         return res
+
+sol = Solution()
+print(sol.queryResults(limit = 4, queries = [[1,4],[2,5],[1,3],[3,4]]))
+print(sol.queryResults(limit = 4, queries = [[0,1],[1,2],[2,2],[3,4],[4,5]]))
