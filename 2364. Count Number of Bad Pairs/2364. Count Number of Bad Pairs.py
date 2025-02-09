@@ -11,3 +11,7 @@ class Solution:
 
         n = len(nums)
         return (n * (n - 1)) // 2 - good_pairs
+
+sol = Solution()
+print(sol.countBadPairs(nums = [4,1,3,3]))
+print(sol.countBadPairs(nums = [1,2,3,4,5]))
