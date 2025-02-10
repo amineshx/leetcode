@@ -14,4 +14,6 @@ class Solution:
         return ''.join(res)
 
 sol = Solution()
-print(sol.clearDigits("fdd14"))
+print(sol.clearDigits(s="fdd14"))
+print(sol.clearDigits(s= "abc"))
+print(sol.clearDigits(s = "cb34"))

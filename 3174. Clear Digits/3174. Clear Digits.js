@@ -13,3 +13,6 @@ var clearDigits = function(s) {
     }
     return res.join('')
 };
+
+console.log(clearDigits(s="abc"))
+console.log(clearDigits(s="cb34"))
