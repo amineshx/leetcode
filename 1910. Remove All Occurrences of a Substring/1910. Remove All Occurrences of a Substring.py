@@ -8,6 +8,8 @@ class Solution:
                     stack.pop()
         return "".join(stack)
 
-
+sol = Solution()
+print(sol.removeOccurrences(s = "daabcbaabcbc", part = "abc"))
+print(sol.removeOccurrences(s = "axxxxyyyyb", part = "xy"))
 
 
