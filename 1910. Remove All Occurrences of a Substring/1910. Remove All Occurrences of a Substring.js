@@ -18,3 +18,6 @@ var removeOccurrences = function(s, part) {
   } 
   return stack.join("")
 };
+
+console.log(removeOccurrences(s = "daabcbaabcbc", part = "abc"))
+console.log(removeOccurrences(s = "axxxxyyyyb", part = "xy"))
