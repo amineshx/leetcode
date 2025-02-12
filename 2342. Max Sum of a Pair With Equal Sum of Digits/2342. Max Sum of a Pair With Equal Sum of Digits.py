@@ -23,6 +23,8 @@ class Solution:
                 digit_sum_map[s] = num  
         
         return res
-    
+
+sol = Solution()
+print(sol.maximumSum(nums = [18,43,36,13,7]))
         
 
