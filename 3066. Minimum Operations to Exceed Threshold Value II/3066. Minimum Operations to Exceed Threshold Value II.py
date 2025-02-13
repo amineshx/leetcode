@@ -12,3 +12,7 @@ class Solution:
             bisect.insort(q,num)
             res+=1
         return res
+
+sol = Solution()
+print(sol.minOperations(nums = [2,11,10,1,3], k = 10))
+print(sol.minOperations(nums = [1,1,2,4,9], k = 20))
