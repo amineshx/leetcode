@@ -21,6 +21,7 @@ class ProductOfNumbers:
             return int(self.res[-1]/self.res[-1*(1+k)])
 
 
+
 obj = ProductOfNumbers()
 commands = ["ProductOfNumbers", "add", "add", "add", "add", "add", "getProduct", "getProduct", "getProduct", "add", "getProduct"]
 params = [[], [3], [0], [2], [5], [4], [2], [3], [4], [8], [2]]
