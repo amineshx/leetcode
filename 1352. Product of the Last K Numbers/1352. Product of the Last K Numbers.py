@@ -21,7 +21,20 @@ class ProductOfNumbers:
             return int(self.res[-1]/self.res[-1*(1+k)])
 
 
-# Your ProductOfNumbers object will be instantiated and called as such:
-# obj = ProductOfNumbers()
-# obj.add(num)
-# param_2 = obj.getProduct(k)
+obj = ProductOfNumbers()
+commands = ["ProductOfNumbers", "add", "add", "add", "add", "add", "getProduct", "getProduct", "getProduct", "add", "getProduct"]
+params = [[], [3], [0], [2], [5], [4], [2], [3], [4], [8], [2]]
+
+output = []
+for i in range(len(commands)):
+    command = commands[i]
+    param = params[i]
+
+    if command == "add":
+        obj.add(param[0])
+        output.append(None)  
+    elif command == "getProduct":
+        result = obj.getProduct(param[0])
+        output.append(result)
+
+print(output)
