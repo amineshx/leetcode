@@ -18,3 +18,7 @@ class Solution:
             if partition(0, 0, i, str(i*i)):
                 res+=i*i 
         return res
+
+sol = Solution()
+print(sol.punishmentNumber(n = 10))
+print(sol.punishmentNumber(n = 37))
