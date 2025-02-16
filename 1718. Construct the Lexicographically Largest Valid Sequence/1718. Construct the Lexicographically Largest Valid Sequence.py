@@ -31,3 +31,7 @@ class Solution:
 
         backtrack(0)
         return res
+
+sol = Solution()
+print(sol.constructDistancedSequence(n=3))
+print(sol.constructDistancedSequence(n=5))
