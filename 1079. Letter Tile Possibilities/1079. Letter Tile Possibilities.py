@@ -13,3 +13,8 @@ class Solution:
         
         counnter = Counter(tiles)
         return backtracking(counnter)
+
+sol = Solution()
+print(sol.numTilePossibilities(tiles = "AAABBC"))
+print(sol.numTilePossibilities(tiles = "AAB"))
+print(sol.numTilePossibilities(tiles = "V" ))
