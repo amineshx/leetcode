@@ -10,3 +10,7 @@ class Solution:
                 while stack:
                     res+=str(stack.pop())
         return res
+
+sol = Solution()
+print(sol.smallestNumber(pattern = "IIIDIDDD"))
+print(sol.smallestNumber(pattern = "DDD"))
