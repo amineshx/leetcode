@@ -15,3 +15,8 @@ class Solution:
         
         n2 = n
         return dfs("", n, k)
+
+sol = Solution()
+print(sol.getHappyString(n = 1, k = 3))
+print(sol.getHappyString(n = 1, k = 4))
+print(sol.getHappyString(n = 3, k = 9))
