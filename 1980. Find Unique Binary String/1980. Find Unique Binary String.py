@@ -17,3 +17,8 @@ class Solution:
                 return res
         
         return backtracking(0,["0" for _ in nums])
+
+sol = Solution()
+print(sol.findDifferentBinaryString(nums = ["01","10"]))
+print(sol.findDifferentBinaryString(nums = ["00","01"]))
+print(sol.findDifferentBinaryString(nums = ["111","011","001"]))
