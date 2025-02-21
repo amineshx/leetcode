@@ -8,10 +8,23 @@ class TreeNode:
 class FindElements:
 
     def __init__(self, root: Optional[TreeNode]):
-        pass
+        self.recoveredValues = set()
+        root.val = 0
+        self.recoverTree(root)
+
+    def recoverTree(self, root: Optional[TreeNode]):
+        if not root:
+            return
+        self.recoveredValues.add(root.val)
+        if root.left:
+            root.left.val = 2*root.val+1
+            self.recoverTree(root.left)
+        if root.right:
+            root.right.val = 2*root.val+2
+            self.recoverTree(root.right)
 
     def find(self, target: int) -> bool:
-        pass
+        return target in self.recoveredValues
 
 
 # Your FindElements object will be instantiated and called as such:
