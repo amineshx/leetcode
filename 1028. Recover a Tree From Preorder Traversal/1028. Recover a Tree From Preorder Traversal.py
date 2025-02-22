@@ -33,3 +33,8 @@ class Solution:
                 i=j
                 dash_num=0
         return stack[0]
+
+sol = Solution()
+print(sol.recoverFromPreorder(traversal = "1-2--3--4-5--6--7"))
+print(sol.recoverFromPreorder(traversal = "1-2--3---4-5--6---7"))
+print(sol.recoverFromPreorder(traversal = "1-401--349---90--88"))
