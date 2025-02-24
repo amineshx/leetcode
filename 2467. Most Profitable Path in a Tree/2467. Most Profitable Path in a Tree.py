@@ -31,3 +31,7 @@ class Solution:
             return currScore if len(graph[node]) == 1 and node != 0 else max(getAliceMaxScore(neighbor, node, currScore, timestamp + 1) for neighbor in graph[node] if neighbor != parent)
 
         return getAliceMaxScore(0, -1, 0, 0)
+
+sol = Solution()
+print(sol.mostProfitablePath(edges = [[0,1],[1,2],[1,3],[3,4]], bob = 3, amount = [-2,4,2,-4,6]))
+print(sol.mostProfitablePath(edges = [[0,1]], bob = 1, amount = [-7280,2350]))
