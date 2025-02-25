@@ -17,3 +17,8 @@ class Solution:
                 res+= odd_count
                 even_count+=1
         return res % mod
+
+sol = Solution()
+print(sol.numOfSubarrays(arr = [1,3,5]))
+print(sol.numOfSubarrays(arr = [2,4,6]))
+print(sol.numOfSubarrays(arr = [1,2,3,4,5,6,7]))
