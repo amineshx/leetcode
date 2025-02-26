@@ -9,3 +9,7 @@ class Solution:
             max_prefix_sum = max(max_prefix_sum,current)
             min_prefix_sum = min(min_prefix_sum, current)
         return res
+
+sol = Solution()
+print(sol.maxAbsoluteSum(nums = [1,-3,2,3,-4]))
+print(sol.maxAbsoluteSum(nums = [2,-5,1,-4,3,-2]))
