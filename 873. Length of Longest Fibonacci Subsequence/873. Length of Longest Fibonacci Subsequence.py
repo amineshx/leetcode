@@ -17,3 +17,6 @@ class Solution:
                     res = max(res,length)
         return res
 
+sol = Solution()
+print(sol.lenLongestFibSubseq(arr = [1,2,3,4,5,6,7,8]))
+print(sol.lenLongestFibSubseq(arr = [1,3,7,11,12,14,18]))
