@@ -23,3 +23,6 @@ var lenLongestFibSubseq = function(arr) {
     }
     return res
 };
+
+console.log(lenLongestFibSubseq(arr = [1,2,3,4,5,6,7,8]))
+console.log(lenLongestFibSubseq(arr = [1,3,7,11,12,14,18]))
