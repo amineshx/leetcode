@@ -60,3 +60,7 @@ class Solution:
             j -= 1
         
         return ''.join(result[::-1])
+
+sol = Solution()
+print(sol.shortestCommonSupersequence(str1 = "abac", str2 = "cab"))
+print(sol.shortestCommonSupersequence(str1 = "aaaaaaaa", str2 = "aaaaaaaa"))
