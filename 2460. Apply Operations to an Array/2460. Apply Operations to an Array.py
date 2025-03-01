@@ -13,3 +13,5 @@ class Solution:
                 non_zero_i+=1
         return nums
 
+sol = Solution()
+print(sol.applyOperations(nums = [1,2,2,1,1,0]))
