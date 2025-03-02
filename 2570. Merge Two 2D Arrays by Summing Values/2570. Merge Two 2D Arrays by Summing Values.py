@@ -27,3 +27,7 @@ class Solution:
             j+=1
         
         return res
+
+sol = Solution()
+print(sol.mergeArrays(nums1 = [[1,2],[2,3],[4,5]], nums2 = [[1,4],[3,2],[4,1]]))
+print(sol.mergeArrays(nums1 = [[2,4],[3,6],[5,5]], nums2 = [[1,3],[4,3]]))
