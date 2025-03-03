@@ -17,3 +17,7 @@ class Solution:
             res[i2]=res[j2]=pivot
             i2,j2=i2+1,j2-1
         return res
+
+sol = Solution()
+print(sol.pivotArray(nums = [9,12,5,10,14,3,10], pivot = 10))
+print(sol.pivotArray(nums = [-3,4,3,2], pivot = 2))
