@@ -6,3 +6,8 @@ class Solution:
             n //= 3
         
         return True
+
+sol = Solution()
+print(sol.checkPowersOfThree(n=12))
+print(sol.checkPowersOfThree(n=91))
+print(sol.checkPowersOfThree(n=21))
