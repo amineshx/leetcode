@@ -12,3 +12,8 @@ class Solution:
         
         return (1+4*((n-1)*n)//2)
 
+
+sol = Solution()
+print(sol.coloredCells(n=1))
+print(sol.coloredCells(n=2))
+print(sol.coloredCells(n=3))
