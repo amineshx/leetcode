@@ -18,4 +18,6 @@ class Solution:
         return [a,b]
 
 
-        
+sol = Solution()
+print(sol.findMissingAndRepeatedValues(grid = [[1,3],[2,2]]))
+print(sol.findMissingAndRepeatedValues(grid = [[9,1,7],[8,9,2],[3,4,6]]))
