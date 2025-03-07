@@ -3,7 +3,7 @@ class Solution:
     def closestPrimes(self, left: int, right: int) -> List[int]:
         limit = right + 1
         is_prime = [True] * limit
-        is_prime[0] = is_prime[1] = False  # 0 and 1 are not prime
+        is_prime[0] = is_prime[1] = False 
 
         for i in range(2, int(right**0.5) + 1):
             if is_prime[i]:
@@ -22,3 +22,9 @@ class Solution:
                 res = [primes[i], primes[i + 1]]
 
         return res
+
+sol = Solution()
+print(sol.closestPrimes(left = 10, right = 19))
+print(sol.closestPrimes(left = 4, right = 6))
+print(sol.closestPrimes(left = 1, right = 1000000))
+print(sol.closestPrimes(left = 19, right = 31))
