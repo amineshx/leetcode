@@ -11,4 +11,7 @@ class Solution:
                 black_cnt-=1
             res = min(res, k-black_cnt)
         return res
-        
+
+sol = Solution()
+print(sol.minimumRecolors(blocks = "WBBWWBBWBW", k = 7))
+print(sol.minimumRecolors(blocks = "WBWBBBW", k = 2))
