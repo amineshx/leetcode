@@ -53,3 +53,7 @@ class Solution:
                 left = mid + 1  
             
         return result
+
+sol = Solution()
+print(sol.minZeroArray(nums = [2,0,2], queries = [[0,2,1],[0,2,1],[1,1,3]]))
+print(sol.minZeroArray(nums = [4,3,2,1], queries = [[1,3,2],[0,2,1]]))
