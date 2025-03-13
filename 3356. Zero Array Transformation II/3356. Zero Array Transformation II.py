@@ -20,3 +20,36 @@ class Solution:
                 return i + 1  
         
         return -1  
+    
+class Solution:
+    def minZeroArray(self, nums: List[int], queries: List[List[int]]) -> int:
+        n, m = len(nums), len(queries)
+
+        left, right = 0, m
+        result = -1
+
+        while left <= right:
+            mid = (left + right) // 2
+            diff = [0] * (n + 1)
+            for i in range(mid):
+                li, ri, vali = queries[i]
+                diff[li] -= vali
+                if ri + 1 < n:
+                    diff[ri + 1] += vali
+
+            applied = 0
+            zero_array = True
+
+            for i in range(n):
+                applied += diff[i]
+                if nums[i] + applied > 0:
+                    zero_array = False
+                    break
+            
+            if zero_array:
+                result = mid  
+                right = mid - 1  
+            else:
+                left = mid + 1  
+            
+        return result
