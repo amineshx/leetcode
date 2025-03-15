@@ -21,3 +21,7 @@ class Solution:
             else:
                 left = mid + 1
         return res
+
+sol = Solution()
+print(sol.minCapability(nums = [2,3,5,9], k = 2))
+print(sol.minCapability(nums = [2,7,9,3,1], k = 2))
