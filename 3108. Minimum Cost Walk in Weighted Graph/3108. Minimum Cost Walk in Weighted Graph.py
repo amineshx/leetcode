@@ -22,4 +22,23 @@ class Union:
 
 class Solution:
     def minimumCost(self, n: int, edges: List[List[int]], query: List[List[int]]) -> List[int]:
+        UF= Union(n)
+        res = []
+        for u,v,_ in edges:
+            UF.union(u,v)
         
+        coast={}
+        for u,v,w in edges:
+            root=UF.find(u)
+            if root not in coast:
+                coast[root]=w
+            else:
+                coast[root]&=w
+        
+        for source, dist in query:
+            r1,r2=UF.find(source), UF.find(dist)
+            if r1!=r2:
+                res.append(-1)
+            else:
+                res.append(coast[r1])
+        return res
