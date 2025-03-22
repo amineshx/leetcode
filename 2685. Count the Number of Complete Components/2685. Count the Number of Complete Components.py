@@ -1,4 +1,6 @@
 from typing import List
+
+# Union find solution 
 class Solution:
     def countCompleteComponents(self, n: int, edges: List[List[int]]) -> int:
         parent = list(range(n))
@@ -50,3 +52,6 @@ class Solution:
         
         return complete_count
         
+sol = Solution()
+print(sol.countCompleteComponents(n = 6, edges = [[0,1],[0,2],[1,2],[3,4]]))
+print(sol.countCompleteComponents(n = 6, edges = [[0,1],[0,2],[1,2],[3,4],[3,5]]))
