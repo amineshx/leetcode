@@ -17,5 +17,16 @@ class Solution:
                 res+=1
         return res
 
+class Solution:
+    def countDays(self, days: int, meetings: List[List[int]]) -> int:
+        meetings.sort()
+        prev_end=0
+        for start,end in meetings:
+            start = max(start,prev_end+1)
+            lenght = end-start+1
+            days -= max(lenght,0)
+            prev_end = max(prev_end,end)
+        
+        return days
 sol = Solution()
 print(sol.countDays(days = 5, meetings = [[2,4],[1,3]]))
