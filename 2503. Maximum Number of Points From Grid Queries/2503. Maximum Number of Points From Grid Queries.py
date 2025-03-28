@@ -23,3 +23,11 @@ class Solution:
             res[idx]=points
         return res
 
+sol = Solution()
+input1 = [[[1,2,3],[2,5,7],[3,5,1]],[5,6,2]]
+input2 = [[[5,2,1],[1,1,2]],[3]]
+inputs = [input1,input2]
+
+for inpute in inputs:
+    grid, queries = inpute  
+    print(sol.maxPoints(grid, queries))
