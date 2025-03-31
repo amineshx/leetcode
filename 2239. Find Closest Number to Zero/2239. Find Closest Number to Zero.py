@@ -18,5 +18,15 @@ class Solution:
         return pos if abs(pos) < abs(neg) or (abs(pos) == abs(neg) and pos > neg) else neg
 
 
+#sol 2
+class Solution:
+    def findClosestNumber(self, nums: List[int]) -> int:
+        closest = nums[0] 
+        for num in nums:
+            if abs(num) < abs(closest) or (abs(num) == abs(closest) and num > closest):
+                closest = num
+        return closest
+
+
 sol = Solution()
 print(sol.findClosestNumber(nums = [-4,-2,1,4,8]))
