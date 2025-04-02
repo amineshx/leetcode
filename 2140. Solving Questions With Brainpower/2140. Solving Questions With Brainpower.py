@@ -24,3 +24,7 @@ class Solution:
             skip = memo[i+1] if i+1 < n else 0 
             memo[i] = max(choose,skip)
         return memo[0]
+
+sol = Solution()
+print(sol.mostPoints(questions = [[3,2],[4,3],[4,4],[2,5]]))
+print(sol.mostPoints(questions = [[1,1],[2,2],[3,3],[4,4],[5,5]]))
