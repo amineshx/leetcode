@@ -12,3 +12,15 @@ class Solution:
             return memo[i]
         
         return backtrack(0,memo={})
+
+class Solution:
+    def mostPoints(self, questions: List[List[int]]) -> int:
+        n=len(questions)
+        memo = {k:0 for k in range(n)}
+        for i in reversed(range(n)):
+            points, brainpower = questions[i]
+            j = i+brainpower+1
+            choose = points + (memo[j] if j < n else 0)
+            skip = memo[i+1] if i+1 < n else 0 
+            memo[i] = max(choose,skip)
+        return memo[0]
