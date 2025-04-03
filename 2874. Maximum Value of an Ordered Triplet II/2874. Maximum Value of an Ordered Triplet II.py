@@ -26,3 +26,8 @@ class Solution:
             max_prefix = max(max_prefix, nums[i])
             diff = max(diff, max_prefix-nums[i])
         return res
+
+sol = Solution()
+print(sol.maximumTripletValue(nums = [12,6,1,2,7]))
+print(sol.maximumTripletValue(nums = [1,10,3,4,19]))
+print(sol.maximumTripletValue(nums = [1,2,3]))
