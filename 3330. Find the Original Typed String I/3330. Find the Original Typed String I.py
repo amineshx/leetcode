@@ -7,3 +7,8 @@ class Solution:
                 res+=1
             i+=1
         return res+1
+
+sol = Solution()
+print(sol.possibleStringCount(word = "abbcccc"))
+print(sol.possibleStringCount(word = "abcd"))
+print(sol.possibleStringCount(word = "aaaa"))
