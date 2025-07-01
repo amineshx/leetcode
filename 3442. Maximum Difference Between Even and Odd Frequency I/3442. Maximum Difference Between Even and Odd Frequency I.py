@@ -21,3 +21,4 @@ class Solution:
 
 sol = Solution()
 print(sol.maxDifference(s = "aaaaabbc"))
+print(sol.maxDifference(s = "abcabcab"))
