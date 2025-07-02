@@ -37,3 +37,8 @@ class Solution:
 
         invalid = sum(dp[len(groups):k]) % MOD
         return (total - invalid + MOD) % MOD
+    
+sol = Solution()
+print(sol.possibleStringCount(word = "aabbccdd", k = 7))
+print(sol.possibleStringCount(word = "aabbccdd", k = 8))
+print(sol.possibleStringCount(word = "aaabbb", k = 3))
