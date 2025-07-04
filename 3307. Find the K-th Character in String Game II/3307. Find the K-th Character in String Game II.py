@@ -13,3 +13,7 @@ class Solution:
             n //= 2
             i -= 1
         return chr(d % 26 + ord("a"))
+    
+sol = Solution()
+print(sol.kthCharacter(k = 5, operations = [0,0,0]))
+print(sol.kthCharacter(k = 10, operations = [0,1,0,1]))
