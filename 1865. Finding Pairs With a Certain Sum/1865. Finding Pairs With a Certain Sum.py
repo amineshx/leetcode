@@ -29,3 +29,23 @@ class FindSumPairs:
 # obj = FindSumPairs(nums1, nums2)
 # obj.add(index,val)
 # param_2 = obj.count(tot)
+
+
+
+methods = ["FindSumPairs", "count", "add", "count", "count", "add", "add", "count"]
+args =    [[[1, 1, 2, 2, 2, 3], [1, 4, 5, 2, 5, 4]], [7], [3, 2], [8], [4], [0, 1], [1, 1], [7]]
+
+outputs = []
+
+for i, method in enumerate(methods):
+    if method == "FindSumPairs":
+        obj = FindSumPairs(*args[i])
+        outputs.append(None)
+    elif method == "add":
+        obj.add(*args[i])
+        outputs.append(None)
+    elif method == "count":
+        result = obj.count(*args[i])
+        outputs.append(result)
+
+print(outputs)
