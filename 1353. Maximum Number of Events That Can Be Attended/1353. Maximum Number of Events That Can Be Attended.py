@@ -29,3 +29,4 @@ class Solution:
 
 sol = Solution()
 print(sol.maxEvents(events= [[1,2],[2,3],[3,4],[1,2]]))
+print(sol.maxEvents(events = [[1,2],[2,3],[3,4]]))
